@@ -1,0 +1,570 @@
+html{
+    font-size: 10px;
+}
+
+body{
+    display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+    max-width: 1280px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/*Headerエリア*/
+
+.top{
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-under{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo{
+    margin: 12px;
+    margin-left: 10px;
+}
+
+.letter{
+    font-size: 25px;
+    font-weight: bold;
+    margin-top:50px;
+}
+
+.small{
+    font-size: 15px;
+    margin-top:10px;
+    font-weight: normal;
+
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 500px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 18px;
+    max-width: 100%;
+    border:solid 2px #c9c9c9;
+    border-left:solid 0px #c9c9c9;
+    border-right:solid 0px #c9c9c9;
+}
+
+.li{
+    margin-left: 25px;
+    margin-right: 25px;
+    text-align: center;
+}
+
+.li a{
+    text-decoration: none;
+    color: black;
+}
+
+/*TOP画像エリア*/
+
+.top-image-box{
+    background-image: url("/image/TOP.png");
+    background-size: cover;
+    height: 600px;
+    position: relative;
+    margin-left: 50px;
+    margin-right:50px;
+}
+
+.top-text1{
+    text-align: center;
+    font-size: 37px;
+    font-weight: bold;
+    color: aliceblue;
+    margin-bottom: 15px;
+    padding-top: 40px;
+}
+
+.top-text2{
+    text-align: center;
+    font-size: 20px;
+    color: rgb(248, 252, 255);
+    margin-top: 180px;
+}
+
+.proposal_box{
+    justify-content: space-around;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.proposal_box2{
+    justify-content: space-around;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.proposal{
+    margin:auto;
+    width:450px;
+    height: 70px;
+    background-color: #ffd61a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    transition: .3s;
+    margin-bottom: 60px;
+}
+
+.proposal:hover {
+background:  #28bbaa;
+}
+
+.proposal_text{
+    color: aliceblue;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.proposal_text a{
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration:none;
+    color: #011412;
+}
+
+.full_screen{
+    width: 1280px;
+    margin: auto;
+    display: flex;
+}
+
+.left_side{
+    width: 640px;
+}
+
+.right_side{
+    width: 640px;
+}
+
+/*ourコーチズエリア*/
+
+.news{
+    margin-top: 20px;
+    border:solid 2px #c9c9c9;
+    border-left:solid 0px #c9c9c9;
+    border-right:solid 0px #c9c9c9;
+    margin-left: 30px;
+    margin-right:30px;
+}
+
+.news-title{
+    font-size: 35px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.news-titlej{
+    text-align: center;
+    font-size: 25px;
+    line-height:28px;
+    margin-bottom: 15px;
+}
+
+.news-detail{
+    width: 940px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.news-block{
+    width: 200px;
+    flex-direction:column;
+    align-items: center;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.news-block:hover {
+    border: solid 3px #28bbaa;
+
+}
+
+.news-image{
+    width: 200px;
+    height: 300px;
+}
+
+.news-date{
+    font-size: 16px;
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.news-text{
+    font-size: 16px;
+    text-align: left;
+}
+
+.more_box{
+    justify-content: space-around;
+    margin-top: 60px;
+}
+
+.more{
+    margin:auto;
+    width:300px;
+    height: 60px;
+    background-color: #ffd61a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    transition: .3s;
+    margin-bottom: 60px;
+}
+
+.more:hover {
+background: #011412;
+}
+
+.more_text{
+    color: aliceblue;
+    font-size: 18px;
+}
+
+/*投稿エリア*/
+
+.post{
+    margin-top: 20px;
+    border:solid 0px #c9c9c9;
+    border-left:solid 0px #c9c9c9;
+    border-right:solid 0px #c9c9c9;
+    margin-left: 30px;
+    margin-right:30px;
+}
+
+.post-title{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.post-titlej{
+    text-align: center;
+    font-size: 25px;
+    line-height:28px;
+    margin-bottom: 15px;
+}
+
+.btn-remove{
+    margin:auto;
+    width:200px;
+    height: 30px;
+    background-color: #ffd61a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    transition: .3s;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-try{
+    margin:auto;
+    width:200px;
+    height: 30px;
+    background-color: #17e9c6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    transition: .3s;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-more{
+    margin:auto;
+    width:200px;
+    height: 30px;
+    background-color: #17e9c6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    transition: .3s;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+
+.inputtext {
+    color:rgba(43, 32, 32, 0.76) ;
+    font-size: 18px;
+    border-left: 0;
+    border-right: 0;
+    width: 80px;
+    line-height: 3rem;
+    text-align: center;
+    border: 1px solid #D7DBDD;
+    padding: 0 10px;
+  }
+
+.btn-submit:hover {
+    background: #011412;
+}
+
+/*パーソナライズ提案エリア*/
+
+.contact{
+    width: 700px;
+}
+
+.form-wrapper{
+    width: 700px;
+    margin: auto;
+}
+
+.contact-title{
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.con1{
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 64px;
+    font-size: 16px;
+    line-height: 175%;
+}
+
+.con2{
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 32px;
+    font-size: 16px;
+    line-height: 175%;
+}
+
+.con3{
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 80px;
+    font-size: 16px;
+    line-height: 175%;
+}
+
+.form-inner{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.form-title{
+    width: 160px;
+    padding: 12px 64px 8px 16px;
+    font-weight: normal;
+    text-align: left;
+    border:solid 1px #c9c9c9;
+    font-size: 16px;
+    border-left: 1px solid white;
+}
+
+.form-title .check-radio{
+    padding: 0;
+}
+
+.form-item{
+    width: 400px;
+    padding: 8px 8px 8px 8px;
+    border:solid 1px #c9c9c9;
+    text-align: left;
+    font-size: 16px;
+    border-right: 1px solid white;
+}
+
+.form-parts{
+    appearance: none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    border:solid 1px #c9c9c9;
+    font-size: 1.6rem;
+}
+
+.form-ul_01{
+    height: 250px;
+}
+
+.checkbox{
+    margin-bottom:24px;
+}
+
+.input[type*="checkbox"]{
+    appearance: none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    width: 16px;
+    height: 16px;
+    margin-top: 12px;
+    margin-bottom:12px;
+    border:solid 1px #c9c9c9;
+    margin: 0 40px 0 0px;
+}
+
+.input[type*="checkbox"]:checked{
+    background-color: #a0a0a0;
+}
+
+.btn-submit{
+    margin:auto;
+    width:300px;
+    height: 60px;
+    color: white;
+    background-color: #ffd61a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:none;
+    transition: .3s;
+    margin-bottom: 30px;
+}
+
+.age_result-box{
+        background-image: url("./TOP\ IMAGE.png");
+        background-size: cover;
+        height: 400px;
+        position: relative;
+        margin-left: 50px;
+        margin-right:50px;
+        margin-bottom:50px;
+}
+    
+.age_result{
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        color: rgb(1, 12, 20);
+        padding-bottom: 30px;
+        padding-top: 100px;
+}
+
+.confirm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(1, 12, 20);
+    padding-bottom: 100px;
+    padding-top: 100px;
+}
+
+.form-post{
+    width: 300px;
+    padding: 8px;
+}
+
+.footer-text-center{
+    padding: 24px 0;
+    background-color: #707070;
+    text-align: center;
+}
+
+.copyrights {
+color: #fff;
+font-size: 16px;
+text-align: center;
+margin-top: 30px;
+}
+
+.output{
+    overflow-y: scroll;
+    height: 800px;
+    margin:auto;
+    width:340px;
+}
+
+.outputdetail{
+    margin-left: 50px;
+}
+.chat{
+    margin:auto;
+    width:270px;
+    height: 150px;
+    align-items: center;
+    transition: .3s;
+    margin-bottom: 5px;
+}
+
+.uname{
+    margin:auto;
+    text-align: center;
+    align-items: center;
+    font-size: 20px;
+    padding-top:10px;
+    padding-bottom:10px;
+    background-color: #ecf3f2;
+    height: 30px;
+}
+
+.text{
+    margin:auto;
+    text-align: center;
+    align-items: center;
+    font-size: 20px;
+    padding-top:10px;
+    padding-bottom:5px;
+    background-color: #ecf3f2;
+    height: 30px;
+}
+
+.postimage{
+    margin-left: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.loginbutton{
+    margin:auto;
+    width:300px;
+    height: 60px;
+    color: white;
+    background-color: #ffd61a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:none;
+    transition: .3s;
+    margin-bottom: 30px;
+}
+
+.loginmsg{
+    margin:auto;
+    width:300px;
+    height: 60px;
+    color: white;
+    background-color: #ffd61a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:none;
+    transition: .3s;
+    margin-bottom: 30px;
+}
