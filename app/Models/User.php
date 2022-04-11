@@ -54,6 +54,14 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Hp');
     }
     
+    public function from_chats() {
+        return $this->hasMany('App\Models\Chat','from_user_id');
+    }
+    
+    public function to_chats() {
+        return $this->hasMany('App\Models\Chat','to_user_id');
+    }
+    
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];

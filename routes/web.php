@@ -5,22 +5,14 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\PostsController;//追記
 use App\Http\Controllers\ImgController;//追記
+use App\Http\Controllers\ImginputController;//追記
 use App\Http\Controllers\HpsController;//追記
 use App\Http\Controllers\ScheduleController;//追記
+use App\Http\Controllers\ChatsController;//追記
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 //TOPページ表示
-Route::get('/top', [PostsController::class, 'top']);
+Route::get('/', [PostsController::class, 'top']);
 
 //投稿一覧表示
 Route::get('/posts', [PostsController::class, 'index']);
@@ -40,11 +32,30 @@ Route::get('/postsedit/{post}',[PostsController::class, 'edit']);
 //更新処理
 Route::post('/posts/update',[PostsController::class, 'update']);
 
-//画像アップロード画面表示
+//詳細画面表示
+Route::get('/postsdetail/{post}',[PostsController::class, 'detail']);
+
+//詳細画面に対するコメント画面表示
+Route::get('/postscomment/{post}',[PostsController::class, 'comment']);
+
+//詳細画面に対するコメント
+Route::post('postsdocomment',[PostsController::class, 'docomment']);
+
+//ちゃっと画面表示
+Route::get('/chats/{user}',[ChatsController::class, 'chat']);
+
+//ちゃっと投稿
+Route::post('dochats',[ChatsController::class, 'store']);
+
+
+//プロフィール画像アップロード画面表示
 Route::get('/img', [ImgController::class, 'index']);
 
-//画像アップロード処理
+//プロフィール画像アップロード処理
 Route::post('/img/upload',[ImgController::class, 'upload']);
+
+//ユーザー一覧表示
+Route::get('/users', [PostsController::class, 'userindex']);
 
 //hp投稿一覧表示
 Route::get('/hp', [HpsController::class, 'index']);

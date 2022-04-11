@@ -11,7 +11,7 @@
         <!-- バリデーションエラーの表示に使用-->
         <!-- 投稿フォーム -->
         @if( Auth::check() )
-        <form action="{{ url('posts') }}" method="POST" class="form-horizontal">
+        <form action="{{ url('posts') }}" method="POST" class="form-horizontal" enctype="multipart/form-data">
             {{ csrf_field() }}
             <!-- 投稿のタイトル -->
             <div class="form-group">
@@ -27,6 +27,11 @@
                     <input type="text" name="post_desc" class="form-control">
                 </div>
             </div>
+            
+            <div class="form-group">
+                <input id="fileUploader" type="file" name="img" accept='image/' enctype="multipart/form-data" multiple="multiple" required autofocus>
+            </div>
+
             <!--　登録ボタン -->
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-6">

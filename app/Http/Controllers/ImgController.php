@@ -16,16 +16,17 @@ class ImgController extends Controller
         $this->middleware('auth');
     }
         
-    //画像アップローダー表示
+    //プロフィール画像アップローダー表示
     public function index(){
     
          $user = Auth::user();
          
          return view('img_upload',[
-             'user'=>$user
+             'user'=>$user //この意味合いはなんだっけ？
         ]);
     }
-    // 画像アップロード処理
+    
+    // プロフィール画像アップロード処理
     public function upload(Request $request){
     
        // バリデーション 

@@ -21,6 +21,7 @@ body{
 .top-under{
     display: flex;
     justify-content: space-between;
+    margin-left: 50px;
 }
 
 .logo{
@@ -41,16 +42,21 @@ body{
 
 }
 
+.letter a{
+    text-decoration: none;
+    color: black;
+}
+
 .nav{
     display: flex;
     align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 500px;
-    margin-bottom: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 700px;
+    margin-bottom: 10px;
     margin-left: 50px;
     margin-right: 50px;
-    font-size: 18px;
+    font-size: 16px;
     max-width: 100%;
     border:solid 2px #c9c9c9;
     border-left:solid 0px #c9c9c9;
@@ -69,16 +75,6 @@ body{
 }
 
 /*TOP画像エリア*/
-
-.top-image-box{
-    background-image: url("/image/TOP.png");
-    background-size: cover;
-    height: 600px;
-    position: relative;
-    margin-left: 50px;
-    margin-right:50px;
-}
-
 .top-text1{
     text-align: center;
     font-size: 37px;
@@ -90,38 +86,83 @@ body{
 
 .top-text2{
     text-align: center;
-    font-size: 20px;
+    font-size: 30px;
     color: rgb(248, 252, 255);
-    margin-top: 180px;
+    margin-top: 80px;
 }
 
-.proposal_box{
-    justify-content: space-around;
-    margin-top: 20px;
+.proposal_box_01{
+    margin-top: 200px;
+    margin-left: 0px;
     text-decoration: none;
 }
 
-.proposal_box2{
-    justify-content: space-around;
-    margin-top: 20px;
+.proposal_box_02{
+    margin-top: 80px;
+    margin-left: 0px;
     text-decoration: none;
 }
 
-.proposal{
-    margin:auto;
-    width:450px;
-    height: 70px;
+.proposal_box_03{
+    margin-top: 150px;
+    margin-left: 0px;
+    text-decoration: none;
+}
+
+.proposal_box_04{
+    margin-top: -70px;
+    margin-left:0px;
+    text-decoration: none;
+}
+
+.proposal_left{
+    width:400px;
+    height: 60px;
     background-color: #ffd61a;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 6px;
     transition: .3s;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
 
-.proposal:hover {
+.proposal_right_01{
+    margin-left:30px;
+    width:260px;
+    height: 250px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:solid 5px #c9c9c9;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.proposal_right_02{
+    margin-left: 300px;
+    width:260px;
+    height: 250px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:solid 5px #c9c9c9;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.proposal_left:hover {
 background:  #28bbaa;
+}
+
+.proposal_right_01:hover {
+background: #28bbaa;
+}
+
+.proposal_right_02:hover {
+background: #28bbaa;
 }
 
 .proposal_text{
@@ -145,10 +186,21 @@ background:  #28bbaa;
 
 .left_side{
     width: 640px;
+    background-image: url("/image/glasses.png");
+    background-size: cover;
+    height: 800px;
+    position: relative;
+    margin-left: 50px;
 }
 
 .right_side{
     width: 640px;
+    background-image: url("/image/top.png");
+    background-size: cover;
+    height: 800px;
+    position: relative;
+    margin-left: 20px;
+    margin-right:50px;
 }
 
 /*ourコーチズエリア*/
@@ -482,6 +534,10 @@ background: #011412;
 }
 
 .footer-text-center{
+    width: 1180px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10Px;
     padding: 24px 0;
     background-color: #707070;
     text-align: center;
@@ -567,4 +623,61 @@ margin-top: 30px;
     border:none;
     transition: .3s;
     margin-bottom: 30px;
+}
+
+.search{
+    margin-left:50px;
+    margin-right:50px;
+    margin-bottom:50px;
+}
+
+.search_form{
+    height: 30px;
+}
+
+.form-control mr-sm-2{
+    height: 30px;
+}
+
+.post_all{
+    display: flex;
+    flex-wrap:wrap;
+    margin-left:50px;
+    margin-right:50px;
+    margin-bottom:50px;
+}
+
+.post_block{
+    width:23%;
+    margin-right: 15px;
+}
+
+.post_img img{
+    border-radius: 10px 10px 0px 0px; /* 左上、右上、右下、左下 */
+}
+
+.post_under{
+    background-color:#f5fffa;
+    border :1px solid #dcdcdc;
+    border-top :0px solid white; 
+    border-radius: 0px 0px 10px 10px; /* 左上、右上、右下、左下 */
+    height:150px;
+}
+
+.post_title {
+    padding-top:10px; 
+    font-size: 20px;
+}
+
+.post_button{
+    display: flex;
+    margin-top: 10px;
+}
+
+.post_detail {
+    width:50%;
+}
+
+.post_like {
+    width:50%;
 }

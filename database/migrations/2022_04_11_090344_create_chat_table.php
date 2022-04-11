@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-            Schema::create('posts', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('post_title');
-            $table->string('post_desc');
-            $table->string('img_url')->nullable();//追記！！！
-	        $table->integer('user_id');
+        Schema::create('chats', function (Blueprint $table) {
+            $table->id();
+            $table->integer("from_user_id");
+            $table->integer("to_user_id");
+            $table->string('chat_desc');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('chats');
     }
 };

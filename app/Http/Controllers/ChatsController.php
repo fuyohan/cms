@@ -3,39 +3,44 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Post; //この行を上に追加
 use App\Models\User;//この行を上に追加
-use App\Models\Hp;//この行を上に追加
+use App\Models\Chat;//この行を上に追加
 use Auth;//この行を上に追加
 use Validator;//この行を上に追加
 
-class HpsController extends Controller
+class ChatsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-         // 全てのhpを取得
-        
-        $hps = Hp::where("user_id", Auth::id())->orderby("testdate")->get();
-        return view('hps',[
-            'hps'=> $hps
-            ]);
-    }
-    
-    public function input()
-    {
-        return view('hpinput');
-    }
+    //public function index()
+    //{
+        //
+    //}
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+     
+    public function chat(User $user)
+    {
+        
+        $chats = Chat::orderBy('created_at', 'desc')->where(function ($query) use($user) {
+            $query->where('from_user_id', Auth::id())->where('to_user_id', $user->id);
+        })->orwhere(function ($query) use($user){
+            $query->where('to_user_id', Auth::id())->where('from_user_id', $user->id);
+        })->get();
+        
+        return view('chats',[
+            'user'=>$user, //bladeに対しuserテーブル（レコード1本だけ）のデータを渡す
+            'chats'=>$chats 
+        ]);
+    }
+     
     public function create()
     {
         //
@@ -47,16 +52,16 @@ class HpsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-     public function store(Request $request)
+    public function store(Request $request)
     {
         //以下に登録処理を記述（Eloquentモデル）
-        $hps = new Hp;
-        $hps->user_id= $request->user_id;
-        $hps->hp = $request->hp;
-        $hps->testdate = $request->testdate;
-        $hps->save();
-        
-        return redirect('/hp');
+        $chat = new Chat;
+        // Eloquent モデル
+        $chat->chat_desc = $request->chat_desc; 
+        $chat->from_user_id = Auth::id();//ここでログインしているユーザidを登録しています
+        $chat->to_user_id= $request->to_user_id;//ここでログインしているユーザidを登録しています
+        $chat->save(); 
+        return redirect('/chats/'.$request->to_user_id);
     }
 
     /**

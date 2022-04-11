@@ -17,15 +17,15 @@
                     <tbody>
                         @foreach ($hps as $hp)
                             <tr>
-                                <!-- 投稿タイトル -->
+                                <!-- User ID -->
                                 <td class="table-text">
                                     <div>{{ $hp->user_id }}</div>
                                 </td>
-                                 <!-- 投稿詳細 -->
+                                 <!-- hp値 -->
                                 <td class="table-text">
                                     <div>{{ $hp->hp }}</div>
                                 </td>
-				                <!-- 投稿者名の表示 -->
+				                <!-- 検査日 -->
                                 <td class="table-text">
                                     <div>{{ $hp->testdate }}</div>
                                 </td>
@@ -36,6 +36,52 @@
                 </table>
             </div>
         </div>		
+    
+    <canvas id="myChart"></canvas>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+	
+	<!-- グラフを描画 -->
+	//配列をバラす。
+   <script>
+	//ラベル
+	var labels = [
+		"2020年1月",
+		"2020年2月",
+		"2020年3月",
+		"2020年4月",
+		"2020年5月",
+		"2020年6月",
+	];
+	
+	//HPログ
+	var hps = @json($hps); //日付とhp値がセットになったデータが渡される
+	var hp = hps.map(x => x.hp);
+	var testdate = hps.map(x => x.testdate);
+	
+	//グラフを描画
+    var ctx = document.getElementById("myChart");
+    var myChart = new Chart(ctx, {
+		type: 'line',
+		data : {
+			labels: testdate,
+			datasets: [
+				{
+					label: 'hp値',
+					data: hp,
+					borderColor: "rgba(0,0,255,1)",
+         			backgroundColor: "rgba(0,0,0,0)"
+				},
+			]
+		},
+		options: {
+			title: {
+				display: true,
+				text: 'hpログ'
+			}
+		}
+   });
+   </script>
+    
     @endif
     
 @endsection

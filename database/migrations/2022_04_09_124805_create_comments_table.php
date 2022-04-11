@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-            Schema::create('posts', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('post_title');
-            $table->string('post_desc');
+        Schema::create('comments', function (Blueprint $table) {
+            $table->id();
+            $table->integer('post_id');
+            $table->integer('user_id');
+            $table->string('comment_desc');
             $table->string('img_url')->nullable();//追記！！！
-	        $table->integer('user_id');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('comments');
     }
 };

@@ -13,21 +13,10 @@
 
   <!--Headerエリア--->
   <header>
-    <div class="top">
-      <div class="top-under">
-        <h1 class="logo"><a href="./Kenko-top.html"><img src="./img/PAGE LOGO.png" alt="ロゴ" width=100px
-              height=100px></a></h1>
-        <h1 class="letter">ハツラツ<br>
-          <div class="small">前向きなチャレンジで健康予防に</div>
-        </h1>
-      </div>
-    </div>
-
     <div class="menu">
       <ul class=nav>
-        <li class="li"><a href="Kenko-chat.html">健康ナレッジ<br>を投稿</a></li>
-        <li class="li"><a href="">健康<br>スケジューリング</a></li>
-        <li class="li"><a href="">健診を控えている方は<br>こちらへ！</a></li>
+        <li class="li"><a href="./input">ハツラツ生活ナレッジ<br>を投稿</a></li>
+        <li class="li"><a href="./hp">今月のマイHP</a></li>
       </ul>
     </div>
   </header>
@@ -38,36 +27,37 @@
 
       <!--左エリア-->
       <div class="left_side">
-        <div class="top-image-box">
-          <div class="top-text">
-            <div class="top-text1">あなたに合った「健康」を見つけよう</div>
-            <div class="top-text2">「会社員」に寄り添った健康ナレッジをご提供します！</div>
-            <div class="proposal_box">
-              <div class="proposal">
-                <div class="proposal_text">
-                  <a href="./Kenko-proposal new.html">健診を受けた方はこちらへ</a>
-                </div>
+            <div class="proposal_box_01">
+              <div class="proposal_left">
+                <div class="proposal_text"><a href="./Kenko-proposal new.html">男性ホルモン唾液検査</a></div>
               </div>
             </div>
-          </div>
-        </div>
+           <div class="proposal_box_02">
+              <div class="proposal_left">
+                <div class="proposal_text"><a href="./schedule">HP向上プラン</a></div>
+              </div>
+            </div>
+           <div class="top-text1">あなたの男性力を<br>測ってみませんか？</div>
       </div>
 
       <!--右エリア -->
       <div class="right_side">
-        <div class="top-image-box">
-          <div class="top-text">
-            <div class="top-text1">あなたに合った「健康」を見つけよう</div>
-            <div class="top-text2">「会社員」に寄り添った健康ナレッジをご提供します！</div>
-            <div class="proposal_box">
-              <div class="proposal">
-                <div class="proposal_text">
-                  <a href="./Kenko-proposal new.html">健診を受けた方はこちらへ</a>
-                </div>
+       
+            <div class="top-text2">ハツラツとしたチャレンジで<br>アンチエージング社会を共創しよう</div>
+            
+            <div class="proposal_box_03">
+              <div class="proposal_right_01">
+                <div class="proposal_text"><a href="./posts">みんなの<br>ハツラツ</a></div>
               </div>
             </div>
-          </div>
-        </div>
+            
+            <div class="proposal_box_04">
+              <div class="proposal_right_02">
+                <div class="proposal_text"><a href="./users">ビジネス<br>マッチング</a></div>
+              </div>
+            </div>
+        
+        
       </div>
 
 

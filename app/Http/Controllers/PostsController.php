@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post; //この行を上に追加
 use App\Models\User;//この行を上に追加
+use App\Models\Comment;//この行を上に追加
 use Auth;//この行を上に追加
 use Validator;//この行を上に追加
+use Illuminate\Support\Str;
 
 class PostsController extends Controller
 {
@@ -22,6 +24,14 @@ public function top()
     }
 
 
+public function userindex()
+    {
+        $users = User ::get();
+        return view('users',[
+       'users'=> $users
+        ]);
+    }
+
 public function index()
     {
         
@@ -32,7 +42,7 @@ public function index()
                 $query->where('post_title', 'LIKE', "%{$search}%")->orWhere('post_desc','LIKE',"%{$search}%");
             }
             
-        })->get();
+        })->withCount("favo_user")->get();
         
         if (Auth::check()) {
              //ログインユーザーのお気に入りを取得
@@ -91,11 +101,33 @@ public function index()
         }
         
         //以下に登録処理を記述（Eloquentモデル）
-        $posts = new Post;
-        $posts->post_title = $request->post_title;
-        $posts->post_desc = $request->post_desc;
-        $posts->user_id = Auth::id();//ここでログインしているユーザidを登録しています
-        $posts->save();
+        $post = new Post;
+        
+        // 画像ファイル取得
+        $file = $request->img; //$requestは引数。コントローラの関数の引数。
+    
+        if ( !empty($file) ) {
+    
+            // ファイルの拡張子取得
+            $ext = $file->guessExtension();
+    
+            //ファイル名を生成
+            $fileName = Str::random(32).'.'.$ext;
+    
+            // 画像のファイル名を任意のDBに保存
+            $post->img_url = $fileName;
+    
+            //public/uploadフォルダを作成
+            $target_path = public_path('/uploads/');
+    
+            //ファイルをpublic/uploadフォルダに移動
+            $file->move($target_path,$fileName);
+        }
+        
+        $post->post_title = $request->post_title;
+        $post->post_desc = $request->post_desc;
+        $post->user_id = Auth::id();//ここでログインしているユーザidを登録しています
+        $post->save();
         
         return redirect('/posts');
     }
@@ -120,9 +152,40 @@ public function index()
     public function edit(Post $post) //にだんがまえ前の仕様
     {
         return view('postsedit',[
-            'post'=>$post //bladeに対してpostテーブル（レコード1本だけ）のデータ
+            'post'=>$post //bladeに対してpostテーブル（レコード1本だけ）のデータを渡す
         ]);
     }
+    
+    public function detail(Post $post) //にだんがまえ前の仕様
+    {
+        $comments = Comment::where("post_id",$post->id)->get();
+    
+        return view('postsdetail',[
+            'post'=>$post, //bladeに対してpostテーブル（レコード1本だけ）のデータを渡す
+            'comments'=> $comments
+        ]);
+        
+    }
+    
+    public function comment(Post $post) 
+    {
+        return view('postscomment',[
+            'post'=>$post //bladeに対してpostテーブル（レコード1本だけ）のデータを渡す
+        ]);
+    }
+    
+    public function docomment(Request $request)
+    {
+        //以下に登録処理を記述（Eloquentモデル）
+        $comment = new Comment;
+        // Eloquent モデル
+        $comment->comment_desc = $request->comment_desc; 
+        $comment->user_id = Auth::id();//ここでログインしているユーザidを登録しています
+        $comment->post_id = $request->id;
+        $comment->save(); 
+        return redirect('/posts/'.$request->id);
+    }
+    
     
     /**
      * Update the specified resource in storage.
@@ -165,7 +228,7 @@ public function index()
         $posts->save(); 
         return redirect('/posts');
     }
-
+   
     /**
      * Remove the specified resource from storage.
      *
