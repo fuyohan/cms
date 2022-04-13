@@ -14,6 +14,8 @@
             </div>
         </form> -->
         
+        
+        
         <!-- スケジュール登録フォーム -->
         @if( Auth::check() )
         <form action="{{ url('schedule/register') }}" method="POST" class="form-horizontal">

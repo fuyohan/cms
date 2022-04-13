@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+use App\Models\Post; 
 
 class ScheduleController extends Controller
 {
@@ -13,24 +15,38 @@ class ScheduleController extends Controller
     
      public function store(Request $request)
     {
+        $dt = Carbon::parse($request->date." ".$request->time.":00");
         
-        $data = [ "name" => $request->name, "schedule" => str_replace("/","-",$request->date)."T".$request->time.":00"]; //Requestというオブジェクトにデータが入っているから、呼び出す。->はメソッドやプロパティ（文字列ではない）の呼び出し。=>は連想配列の定義（左辺がkey、右辺が値）
+        $plans=[];
         
+        for($i=0; $i<$request->span; $i++){
+            $dt->addDay(7);
+            $plans[]=$dt->format("Y-m-d\TH:i:s"); //format＝書式。与えられた書式に従って、日付データを文字列に変換する。
+        }
         
-        $transApiUrl = 'https://script.google.com/macros/s/AKfycbyd1nBz8H4fkL_aLL9vZXanZzcH4aD5U0E0BgTtXazHrvbGd_QjcB6zQmEQ38RN2eZq/exec';
-
-        $ch = curl_init();
+        $post = Post::find($request->post_id);
         
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($ch, CURLOPT_URL, $transApiUrl);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        foreach($plans as $plan){
+            $data = [ "mode" => "schedule", "name" => $post->post_title, "schedule" => $plan]; //Requestというオブジェクトにデータが入っているから、呼び出す。->はメソッドやプロパティ（文字列ではない）の呼び出し。=>は連想配列の定義（左辺がkey、右辺が値）
         
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-        $res = curl_exec($ch);
-        curl_close($ch);
+            $transApiUrl = 'https://script.google.com/macros/s/AKfycbzwIYiERvYp1X_ZZebt3Ri53h9jtTfali82bFvKnYcYoDxD9YKT7rbGDSsRPqFbTcXr/exec';
+    
+            $ch = curl_init();
+            
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+            curl_setopt($ch, CURLOPT_URL, $transApiUrl);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+            $res = curl_exec($ch);
+            curl_close($ch);
+            
+        } 
         
-        return redirect('/top');
+       
+        
+        return redirect('/');
         //return $res;
        
     }

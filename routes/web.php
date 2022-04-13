@@ -1,7 +1,11 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
+use App\Models\User;
+use App\Models\Chat;
+use App\Models\Comment;
+use App\Models\Buy;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\PostsController;//追記
 use App\Http\Controllers\ImgController;//追記
@@ -9,7 +13,7 @@ use App\Http\Controllers\ImginputController;//追記
 use App\Http\Controllers\HpsController;//追記
 use App\Http\Controllers\ScheduleController;//追記
 use App\Http\Controllers\ChatsController;//追記
-
+use App\Http\Controllers\ProductsController;//追記
 
 //TOPページ表示
 Route::get('/', [PostsController::class, 'top']);
@@ -65,6 +69,16 @@ Route::get('/hpinput', [HpsController::class, 'input']);
 
 //hp投稿処理
 Route::post('hppost', [HpsController::class, 'store']);
+
+//商品一覧表示
+Route::get('/products', [ProductsController::class, 'index']);
+
+//商品詳細画面表示
+Route::get('/productsdetail/{product}',[ProductsController::class, 'detail']);
+
+//購入＋product tableの在庫を減らす処理
+Route::post('/buy', [ProductsController::class, 'buy']);
+
 
 //スケジュール登録フォーム表示
 Route::get('/schedule', [ScheduleController::class, 'input']);

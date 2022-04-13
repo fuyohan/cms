@@ -11,7 +11,7 @@
                 <label for="post_desc">内容</label>
                 <div>{{$post->post_desc}}"</div>
                 
-                <label for="img">写真</label>
+                <label for="img"></label>
 				@if($post->img_url)
 				<img src="/uploads/{{ $post->img_url }}" style="max-width:200px; max-height:200px;">
 				@endif
@@ -45,13 +45,11 @@
         @if( Auth::check() )
         <form action="{{ url('schedule/register') }}" method="POST" class="form-horizontal">
             {{ csrf_field() }}
-            <!-- 投稿のタイトル -->
-            <div class="form-group">
-                健康法
-                <div class="col-sm-6">
-                    <input type="text" name="name" class="form-control">
-                </div>
-            </div>
+            <select name="span">
+                <option value="4">4週間コース</option>
+                <option value="8">8週間コース</option>
+                <option value="12">12週間コース</option>
+            </select>
             
             <div class="form-group">
                 スケジュール
@@ -71,6 +69,13 @@
                     </button>
                 </div>
             </div>
+            
+             <!-- postテーブルの1レコード分のid 値をschedule controllerに送信 -->
+            <input type="hidden" name="post_id" value="{{$post->id}}" /> <!--/ id 値を送信 -->
+            <!-- CSRF -->
+            {{ csrf_field() }}
+            <!--/ CSRF -->
+            
         </form>
         @endif
 

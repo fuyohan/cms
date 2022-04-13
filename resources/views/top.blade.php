@@ -29,7 +29,7 @@
       <div class="left_side">
             <div class="proposal_box_01">
               <div class="proposal_left">
-                <div class="proposal_text"><a href="./Kenko-proposal new.html">男性ホルモン唾液検査</a></div>
+                <div class="proposal_text"><a href="./products">男性ホルモン唾液検査</a></div>
               </div>
             </div>
            <div class="proposal_box_02">
@@ -43,7 +43,7 @@
       <!--右エリア -->
       <div class="right_side">
        
-            <div class="top-text2">ハツラツとしたチャレンジで<br>アンチエージング社会を共創しよう</div>
+            <div class="top-text2">もう草食と言わせない<br>人生にハツラツと獲物を！！</div>
             
             <div class="proposal_box_03">
               <div class="proposal_right_01">

@@ -54,10 +54,17 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Hp');
     }
     
+    // buysテーブルとのリレーション （主テーブル側）
+     public function buys() {
+        return $this->hasMany('App\Models\Buy');
+    }
+    
+    // Chatsテーブルとのリレーション （主テーブル側）
     public function from_chats() {
         return $this->hasMany('App\Models\Chat','from_user_id');
     }
     
+    // Hpsテーブルとのリレーション （主テーブル側）
     public function to_chats() {
         return $this->hasMany('App\Models\Chat','to_user_id');
     }

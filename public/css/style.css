@@ -86,9 +86,9 @@ body{
 
 .top-text2{
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
     color: rgb(248, 252, 255);
-    margin-top: 80px;
+    margin-top: 30px;
 }
 
 .proposal_box_01{
@@ -661,7 +661,7 @@ margin-top: 30px;
     border :1px solid #dcdcdc;
     border-top :0px solid white; 
     border-radius: 0px 0px 10px 10px; /* 左上、右上、右下、左下 */
-    height:150px;
+    height:180px;
 }
 
 .post_title {
@@ -679,5 +679,48 @@ margin-top: 30px;
 }
 
 .post_like {
+    width:50%;
+}
+
+.product_all{
+    display: flex;
+    flex-wrap:wrap;
+    margin-left:50px;
+    margin-right:50px;
+    margin-bottom:50px;
+}
+
+.product_block{
+    width:50%;
+    margin-right: 15px;
+}
+
+.product_img img{
+    border-radius: 10px 10px 0px 0px; /* 左上、右上、右下、左下 */
+}
+
+.product_under{
+    background-color:#f5fffa;
+    border :1px solid #dcdcdc;
+    border-top :0px solid white; 
+    border-radius: 0px 0px 10px 10px; /* 左上、右上、右下、左下 */
+    height:150px;
+}
+
+.product_title {
+    padding-top:10px; 
+    font-size: 20px;
+}
+
+.product_button{
+    display: flex;
+    margin-top: 10px;
+}
+
+.product_detail {
+    width:50%;
+}
+
+.product_like {
     width:50%;
 }
