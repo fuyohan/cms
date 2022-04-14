@@ -41,7 +41,7 @@
 				                </td>
 				                
 				                @if( Auth::check() )
-                                <!-- chat画面の表示 -->
+                                <!-- chatボタンの表示 -->
                                 <td>
                                     <form action="{{ url('chats/'.$user->id) }}" method="GET"> 
                                     {{ csrf_field() }}

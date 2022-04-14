@@ -25,24 +25,37 @@
         <form>
             
         <!-- チャット履歴 -->
-        <tbody>
+        <div>
                         @foreach ($chats as $chat)
-                            <tr>
-                                 <!-- コメント詳細 -->
-                                <td class="table-text">
-                                    <div>{{ $chat->chat_desc }}</div>
-                                </td>
+                            <div>
 				                <!-- 投稿者名の表示 -->
-                                <td class="table-text">
+                                <div class="table-text">
                                 @if (Auth::id()==$chat->from_user_id)
-                                    <div>{{ Auth::user()->name }}</div>
+                                    
+                                    <div class="right-chat"> 
+                                    <!-- 自分のメッセージ -->
+                                    <div class="table-text">
+                                        <span>{{ $chat->chat_desc }}</span>
+                                    </div>
+                                    <div class="table-text" style="text-align:right">
+                                        <span>{{ Auth::user()->name }}</span>
+                                    </div>
+                                    <div>
                                 @else
-                                    <div>{{ $user->name }}</div>
+                                     <!-- 相手のメッセージ -->
+                                    <div class="left-chat"> 
+                                    <div class="table-text">
+                                        <span>{{ $chat->chat_desc }}</span>
+                                    </div>
+                                    <div class="table-text" style="text-align:left">
+                                        <span>{{ $user->name }}</span>
+                                    </div>
+                                    </div>
                                 @endif
-                                </td>
-                            </tr>
+                                </div>
+                            </div>
                         @endforeach
-        </tbody>
+        </div>
             
     </div>
 </div>

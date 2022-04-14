@@ -28,7 +28,10 @@ class HpsController extends Controller
     
     public function input()
     {
-        return view('hpinput');
+        $users = User::get();
+        return view('hpinput',[
+            'users'=> $users
+            ]);
     }
 
     /**

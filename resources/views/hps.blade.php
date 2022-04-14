@@ -29,11 +29,19 @@
                                 <td class="table-text">
                                     <div>{{ $hp->testdate }}</div>
                                 </td>
-                                
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
+                
+                <div class="recommend">
+                   @if ($hps->last()->hp > 50)
+                   good
+                   @else
+                   bad
+                   @endif
+                </div>
+                
             </div>
         </div>		
     

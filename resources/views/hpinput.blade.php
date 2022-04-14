@@ -17,7 +17,11 @@
             <div class="form-group">
                 ユーザーID
                 <div class="col-sm-6">
-                    <input type="text" name="user_id" class="form-control">
+                    <select name="user_id" class="form-control">
+                    @foreach($users as $user)
+                    <option value="{{$user->id}}">{{$user->name}}</option>
+                    @endforeach
+                    </select>
                 </div>
             </div>
             <!-- 投稿の本文 -->
