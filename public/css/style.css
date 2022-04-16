@@ -6,9 +6,7 @@ body{
     display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-    max-width: 1280px;
-    margin-left: 20px;
-    margin-right: 20px;
+    max-width: 100%;
 }
 
 /*Headerエリア*/
@@ -21,12 +19,12 @@ body{
 .top-under{
     display: flex;
     justify-content: space-between;
-    margin-left: 50px;
+    margin-left: 0px;
 }
 
 .logo{
     margin: 12px;
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 .letter{
@@ -49,30 +47,24 @@ body{
 
 .nav{
     display: flex;
+    justify-content: flex-end;
     align-items: center;
+    margin-left:35%; 
+    list-style: none;
     padding-top: 5px;
     padding-bottom: 5px;
-    padding-left: 700px;
-    margin-bottom: 10px;
-    margin-left: 50px;
-    margin-right: 50px;
-    font-size: 16px;
+    margin-bottom: 0px;
+    font-size: 14px;
     max-width: 100%;
-    border:solid 2px #c9c9c9;
+    border:solid 0px #c9c9c9;
     border-left:solid 0px #c9c9c9;
     border-right:solid 0px #c9c9c9;
 }
 
-.li{
-    margin-left: 25px;
-    margin-right: 25px;
-    text-align: center;
+.li {
+    display: inline;
 }
 
-.li a{
-    text-decoration: none;
-    color: black;
-}
 
 /*TOP画像エリア*/
 .top-text1{
@@ -86,7 +78,7 @@ body{
 
 .top-text2{
     text-align: center;
-    font-size: 40px;
+    font-size: 30px;
     color: rgb(248, 252, 255);
     margin-top: 30px;
 }
@@ -628,7 +620,8 @@ margin-top: 30px;
 .search{
     margin-left:50px;
     margin-right:50px;
-    margin-bottom:50px;
+    margin-bottom:100px;
+    max-width: 50%;
 }
 
 .search_form{
@@ -654,6 +647,9 @@ margin-top: 30px;
 
 .post_img img{
     border-radius: 10px 10px 0px 0px; /* 左上、右上、右下、左下 */
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
 }
 
 .post_under{
@@ -676,6 +672,7 @@ margin-top: 30px;
 
 .post_detail {
     width:50%;
+    margin-left:5%; 
 }
 
 .post_like {
@@ -697,6 +694,9 @@ margin-top: 30px;
 
 .product_img img{
     border-radius: 10px 10px 0px 0px; /* 左上、右上、右下、左下 */
+    width: 100%;
+    height: 100%px;
+    object-fit:cover;
 }
 
 .product_under{
@@ -725,24 +725,73 @@ margin-top: 30px;
     width:50%;
 }
 
-.right-chat{
-    text-align: right;
-    
+.left-chat .table-text{
+    background-color: #335692;
+    color: #fff;
+    text-align: left;
     font-size: 20px;
+    display: flex;
+    align-items: center;
+    flex-basis: calc(100% - 50px);/* flex-shrink: 1; */
+    border-radius: 10px 10px 0 10px;
 }
 
-.left-chat{
-    text-align: left;
-    
+.right-chat .table-text{
+    background-color: #335692;
+    color: #fff;
+    text-align: right;
     font-size: 20px;
+    display: flex;
+    align-items: center;
+    flex-basis: calc(100% - 50px);/* flex-shrink: 1; */
+    border-radius: 10px 10px 0 10px;
 }
+
+.left-chat .table-image {
+    flex-basis:50px;
+}
+
 
 .right-chat span{
-    background-color: blue;
-    max-width:30%;
+    /* background-color: blue; */
+    /* max-width:30%; */
 }
 
 .left-chat span{
-    background-color: yellow;
-    max-width:30%;
+    /* background-color: yellow; */
+    /* max-width:30%; */
+/* display: block; */}
+
+
+#form5{
+position:relative; 
+margin-bottom:20px;	
+}
+#sbox5{	
+outline:0;	
+height:50px;
+padding:0 10px; 
+position:absolute; 
+left:0;
+top:0; 
+max-width:270px;
+border-radius:2px;
+background:#eee;
+}
+#sbtn5{
+width:70px;
+height:50px;
+position:absolute; 
+left:280px; 
+top:0;
+border-radius:2px;
+background:#7fbfff;
+color:#fff;
+font-weight:bold;
+font-size:16px;
+border:none;
+}
+#sbtn5:hover{
+background:#eee;
+color:#7fbfff;
 }

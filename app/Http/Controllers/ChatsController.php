@@ -29,7 +29,7 @@ class ChatsController extends Controller
     public function chat(User $user)
     {
         
-        $chats = Chat::orderBy('created_at', 'desc')->where(function ($query) use($user) {
+        $chats = Chat::orderBy('created_at', 'asc')->where(function ($query) use($user) {
             $query->where('from_user_id', Auth::id())->where('to_user_id', $user->id);
         })->orwhere(function ($query) use($user){
             $query->where('to_user_id', Auth::id())->where('from_user_id', $user->id);

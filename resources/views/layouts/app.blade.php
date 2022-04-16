@@ -38,11 +38,16 @@
                     <ul class="navbar-nav me-auto">
                         <div class="top">
                           <div class="top-under">
-                            <h1 class="letter"><a href="./">ハツ★Ratsu </a><br>
-                            <div class="small">前向きなチャレンジで健康予防に</div>
+                            <h1 class="li">
+                                <a href="/"><img src="/image/logo.png" width=150px, height=100%></a>
                             </h1>
                           </div>
                         </div>
+                    </ul>
+                    
+                    <ul class=nav>
+                       <li class="li"><a href="./input"><img src="/image/mymenu.png" width=180px, height=80%></a></li>
+                       <li class="li"><a href="/hp"><img src="/image/myhp.png" width=180px, height=80%></a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -83,7 +88,16 @@
                 </div>
             </div>
         </nav>
-
+        
+  <!--<header>
+    <div class="menu">
+      <ul class=nav>
+        <li class="li"><a href="./input"><img src="/image/mymenu.png" width=200px, height=80%></a></li>
+        <li class="li"><a href="/hp"><img src="/image/myhp.png" width=200px, height=80%></a></li>
+      </ul>
+    </div>
+  </header>-->
+        
         <main class="py-4">
             @yield('content')
         </main>

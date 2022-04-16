@@ -12,27 +12,18 @@
 </head>
 
   <!--Headerエリア--->
-  <header>
-    <div class="menu">
-      <ul class=nav>
-        <li class="li"><a href="./input">ハツラツ生活ナレッジ<br>を投稿</a></li>
-        <li class="li"><a href="./hp">今月のマイHP</a></li>
-      </ul>
-    </div>
-  </header>
 
- <div class=fullscreen>
-    <!-- Bootstrapの定形コード… -->
-    <!-- 全ての投稿リスト -->
+    
+<div class="search">
     <!--↓↓ 検索フォーム ↓↓-->
-    <div class="search">
-       <form class="form-inline my-2 my-lg-0 ml-2">
-          <div class="search_form">
-          <input type="search" class="form-control mr-sm-2" name="search"  value="{{request('search')}}" placeholder="キーワードを入力" aria-label="検索...">
-          </div>
-          <input type="submit" value="検索" class="btn btn-info">
-       </form>
-    </div>
+         <form id="form5" class="form-inline my-2 my-lg-0 ml-2">
+              <input id="sbox5" type="search" class="form-control mr-sm-2" name="search"  value="{{request('search')}}" placeholder="キーワードを入力" aria-label="検索..."> 
+              <input id="sbtn5" type="submit" value="検索" class="btn btn-info">
+        </form>
+</div>
+
+<div class=fullscreen>
+    
     <!--↑↑ 検索フォーム ↑↑-->
     @if (count($posts) > 0)
                     <!-- 記事全体 -->
@@ -82,7 +73,7 @@
                     </div>
     @endif
 </div>
-
+</div>
     @if( Auth::check())
     @if (count($favo_posts) > 0)
         <div class="card-body">

@@ -15,6 +15,12 @@
 				@if($post->img_url)
 				<img src="/uploads/{{ $post->img_url }}" style="max-width:200px; max-height:200px;">
 				@endif
+				
+				<label for="img"></label>
+				<iframe width=50% height=50% 
+				src="https://www.youtube.com/embed/JWTi58ah74Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+				</iframe>
+				    
             </div>
             <!-- コメントボタンの表示 -->
             <form action="{{ url('postscomment/'.$post->id) }}" method="GET"> 
@@ -65,7 +71,7 @@
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-6">
                     <button type="submit" class="btn btn-primary">
-                        スケジュールに送付
+                        Googleカレンダー連動
                     </button>
                 </div>
             </div>

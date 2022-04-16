@@ -11,16 +11,6 @@
 
 <body class="body">
 
-  <!--Headerエリア--->
-  <header>
-    <div class="menu">
-      <ul class=nav>
-        <li class="li"><a href="./input">ハツラツ生活ナレッジ<br>を投稿</a></li>
-        <li class="li"><a href="./hp">今月のマイHP</a></li>
-      </ul>
-    </div>
-  </header>
-
   <main>
 
     <div class="full_screen">
@@ -43,7 +33,7 @@
       <!--右エリア -->
       <div class="right_side">
        
-            <div class="top-text2">もう草食と言わせない<br>人生にハツラツと獲物を！！</div>
+            <div class="top-text2">「そーしょく（草食）」を<br>アップデートしよう<br>人生にハツラツと獲物を！！</div>
             
             <div class="proposal_box_03">
               <div class="proposal_right_01">
