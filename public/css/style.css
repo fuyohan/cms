@@ -23,8 +23,8 @@ body{
 }
 
 .logo{
-    margin: 12px;
-    margin-left: 5px;
+    margin-right: 12px;
+    margin-left: 0px;
 }
 
 .letter{
@@ -49,7 +49,7 @@ body{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-left:35%; 
+    margin-left:50%; 
     list-style: none;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -96,7 +96,7 @@ body{
 }
 
 .proposal_box_03{
-    margin-top: 150px;
+    margin-top: 120px;
     margin-left: 0px;
     text-decoration: none;
 }
@@ -193,7 +193,112 @@ background: #28bbaa;
     position: relative;
     margin-left: 20px;
     margin-right:50px;
+    overflow: hidden;
+    position: relative; 
 }
+
+.main_img {
+    z-index:10;
+    opacity: 0;
+    width: 100%;
+    height: 680px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-animation: anime 36s 0s infinite;
+    animation: anime 36s 0s infinite; }
+
+    .main_img:nth-of-type(2) {
+      -webkit-animation-delay: 6s;
+      animation-delay: 6s; }
+
+    .main_img:nth-of-type(3) {
+      -webkit-animation-delay: 12s;
+      animation-delay: 12s; }
+
+    .main_img:nth-of-type(4) {
+      -webkit-animation-delay: 18s;
+      animation-delay: 18s; }
+
+    .main_img:nth-of-type(5) {
+      -webkit-animation-delay: 24s;
+      animation-delay: 24s; }
+
+    .main_img:nth-of-type(6) {
+      -webkit-animation-delay: 30s;
+      animation-delay: 30s; }
+
+  .main_imgM {
+    opacity: 0;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-animation: anime 36s 0s infinite;
+    animation: anime 36s 0s infinite; }
+
+    .main_imgM:nth-of-type(2) {
+      -webkit-animation-delay: 6s;
+      animation-delay: 6s; }
+
+    .main_imgM:nth-of-type(3) {
+      -webkit-animation-delay: 12s;
+      animation-delay: 12s; }
+
+    .main_imgM:nth-of-type(4) {
+      -webkit-animation-delay: 18s;
+      animation-delay: 18s; }
+
+    .main_imgM:nth-of-type(5) {
+      -webkit-animation-delay: 24s;
+      animation-delay: 24s; }
+
+    .main_imgM:nth-of-type(6) {
+      -webkit-animation-delay: 30s;
+      animation-delay: 30s; }
+
+@keyframes anime {
+    0% {
+        opacity: 0;
+    }
+    8% {
+        opacity: 1;
+    }
+    17% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0;
+         transform: scale(1.2);
+                    z-index:9;
+    }
+    100% { opacity: 0 }
+}
+
+@-webkit-keyframes anime {
+    0% {
+        opacity: 0;
+    }
+    8% {
+        opacity: 1;
+    }
+    17% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0;
+         -webkit-transform: scale(1.2);
+            z-index:9;
+    }
+    100% { opacity: 0 }
+}
+
+
 
 /*ourコーチズエリア*/
 
@@ -679,6 +784,106 @@ margin-top: 30px;
     width:50%;
 }
 
+.post_full_screen{
+    display: flex;
+    /*justify-content: space-between;*/
+}
+
+.post_left_side{
+   width:640px;
+   margin:50px; 
+}
+
+.post_right_side{
+    width:640px; 
+    margin:50px; 
+}
+
+.post_01{
+   max-width:100%;
+}
+
+.post_02{
+    padding: 30px 30px;
+    border-radius: 100%;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    margin-bottom: 20px;
+    float: left;
+    width: 100%;
+    position: relative;
+    font-size: 15px;
+}
+
+.post_03{
+    padding: 30px 30px;
+    border-radius: 100%;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    margin-bottom: 20px;
+    float: left;
+    width: 100%;
+    position: relative;
+    font-size: 20px;
+}
+
+.post_04{
+    background: #fff;
+    float: left;
+    width: 100%;
+    position: relative;
+    padding: 25px 30px 30px;
+}
+
+.post_05{
+    background: #fff;
+    float: left;
+    width: 100%;
+    position: relative;
+    padding: 25px 30px 30px;
+}
+
+.post_04_title{
+    font-size: 40px;  
+}
+
+.post_04_favo{
+    font-size: 30px;   
+}
+
+.post_title_for_detail{
+     font-size: 20px;
+     margin-bottom: 10px;
+}
+
+.try{
+    background-color: #335692;
+    color: #fff;
+    width: 200px;
+    font-size: 20px;
+    border: 0px;
+    border-radius:2%;
+    text-align: center;
+}
+
+.try_hp{
+    background-color: #335692;
+    color: #fff;
+    width: 200px;
+    font-size: 20px;
+    border: 0px;
+    border-radius:2%;
+    text-align: center;
+    margin-left: 120px;
+}
+
+.post_05_comment{
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
 .product_all{
     display: flex;
     flex-wrap:wrap;
@@ -708,60 +913,272 @@ margin-top: 30px;
 }
 
 .product_title {
+    text-align: center;
     padding-top:10px; 
     font-size: 20px;
 }
 
 .product_button{
-    display: flex;
     margin-top: 10px;
+    margin-left:30%; 
 }
 
 .product_detail {
     width:50%;
+    decoration:none;
+}
+
+.test_submit{
+    background-color: #335692;
+    color: #fff;
+    width: 200px;
+    font-size: 15px;
+    border: 0px;
+    border-radius: 10%;
 }
 
 .product_like {
     width:50%;
 }
 
-.left-chat .table-text{
-    background-color: #335692;
-    color: #fff;
-    text-align: left;
-    font-size: 20px;
+.product_box{
+    padding: 30px 30px;
+    border-radius: 100%;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    margin-bottom: 20px;
+    float: left;
+    width: 100%;
+    position: relative;
+    font-size: 15px;
+}
+
+.product_name{
+    margin-bottom: 10px;
+    font-weight: bold
+}
+
+.product_desc{
+    
+}
+
+.product_img{
+    
+}
+
+.to_user_chat{
+    position: relative;
+}
+
+.image-box-profile{
+    position: absolute;
+    top:0px;
+    left:-80px;
+}
+
+.chat_list li p{
+    width: 45%;
+    max-width: 45%;
+    
+    padding:12px 16px;
+    border-radius: 12px;
+}
+
+.from_user_box p{
+      background-color: #335692;
+      color:white;
+}
+
+.to_user_box p{
+      background-color:#EEEEEE;
+}
+
+/*.left-chat{
     display: flex;
+    justify-content: flex-start;
+    max-width: 500px;
+    gap: 6px ; 
+}
+
+.left-chat .table-text{
+    background-color: #EEEEEE;
+    color: black;
+    text-align: left;
+    font-size: 16px;
+    margin-left: 5px;
     align-items: center;
-    flex-basis: calc(100% - 50px);/* flex-shrink: 1; */
-    border-radius: 10px 10px 0 10px;
+    flex-basis: calc(100% - 50px);
+    border-radius: 10px 10px 10px 0;
+}
+
+.left-chat .table-image {
+    flex-basis:50px;
+}*/
+
+.from_user_box p{
+     margin-left: auto;
+}
+
+
+/*.right-chat{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+    max-width: 500px;
 }
 
 .right-chat .table-text{
     background-color: #335692;
     color: #fff;
     text-align: right;
-    font-size: 20px;
-    display: flex;
+    font-size: 16px;
     align-items: center;
-    flex-basis: calc(100% - 50px);/* flex-shrink: 1; */
-    border-radius: 10px 10px 0 10px;
+    border-radius: 20px 20px 0 20px;
+}*/
+
+.chat_list{
+    list-style: none;
+    padding:10px;
+    padding-left: 80px;
 }
 
-.left-chat .table-image {
-    flex-basis:50px;
+.chat_list > li{
+    min-height: 60px;
+    margin-bottom: 10px;
 }
 
-
-.right-chat span{
-    /* background-color: blue; */
-    /* max-width:30%; */
+.chat-write input{
+    height:70px;
 }
 
-.left-chat span{
-    /* background-color: yellow; */
-    /* max-width:30%; */
-/* display: block; */}
+.textarea {
+    resize: none; /*--リサイズを無効を追加してください--*/
+	height: 140px; /*--高さ--*/
+	margin: 1em 0; /*--外側の余白--*/
+}
 
+.row{
+    display: flex;
+    justify-content: space-between;
+    margin-left:2%;
+    margin-right:2%;
+}
+
+.col-md-11{
+    max-width: 30%;
+    
+}
+.col-md-12{
+    max-width: 70%;
+}
+
+.user_head{
+    background:#fff;
+    display: flex; 
+    gap: 6px ; 
+    border-width: thin;
+    border-color: #f5fffa;
+    border-style: solid;
+}
+
+.col-md-14{
+    height:400px;
+    overflow-x: hidden; 
+    overflow-y: scroll;
+}
+
+.head_image {
+    flex-basis: 50px;
+}
+
+.head_image img{
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+}
+
+.table-image img{
+    width:30px;
+    height:30px;
+    border-radius: 50%;
+}
+
+.user_name{
+    font-size: 20px;
+}
+
+.table-text img{
+    width:30px;
+    height:30px;
+    border-radius: 50%;
+}
+
+.submit{
+    background-color: #335692;
+    color: #fff;
+    width: 60px;
+    font-size: 20px;
+    border: 0px;
+    border-radius: 10%;
+}
+
+.input-full_screen{
+    display: flex;
+}
+.input-box{
+    background: #fff;
+    font-size: 16px;
+    float: left;
+    width: 100%;
+    position: relative;
+    padding: 25px 30px 30px;
+}
+
+.open {
+	cursor:pointer; /* マウスオーバーでカーソルの形状を変えることで、クリックできる要素だとわかりやすいように */
+}
+#pop-up {
+	display: none; /* label でコントロールするので input は非表示に */
+}
+.overlay {
+	display: none; /* input にチェックが入るまでは非表示に */
+}
+#pop-up:checked + .overlay {
+	display: flex;
+	z-index: 9999;
+	background-color: rgba(0,0,0,0.4);
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+justify-content: center;align-items: center;/* opacity: 0.7; */}
+.window {
+	width: 90vw;
+	max-width: 380px;
+	height: 240px;
+	background-color: #ffffff;
+	border-radius: 6px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.text {
+	font-size: 18px;
+	margin: 0;
+}
+.close {
+	cursor:pointer;
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	font-size: 20px;
+}
 
 #form5{
 position:relative; 
@@ -775,7 +1192,7 @@ position:absolute;
 left:0;
 top:0; 
 max-width:270px;
-border-radius:2px;
+
 background:#eee;
 }
 #sbtn5{
@@ -794,4 +1211,56 @@ border:none;
 #sbtn5:hover{
 background:#eee;
 color:#7fbfff;
+}
+
+.comment_list{
+    list-style:none;
+    padding:0px; 
+}
+
+.comment_list > li{
+   display: flex;
+   background-color: #ccc;
+   padding: 8px 0;
+   margin-bottom: 10px;
+   border-radius: 6px;
+   font-size: 16px;
+}
+
+.comment_list_user{
+    width: 80px;
+    min-width: 80px;
+    height: 110px;
+}
+
+.comment_list img{
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+.comment-text h2{
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.image_box{
+    display: flex;
+    justify-content:center;
+    align-items:start;
+}
+
+.comment_list .image_box{
+    height: 80px;
+}
+
+.comment_list_comment{
+    padding:8px;
+}
+
+
+.hp_chart{
+    max-width: 1000px;
+    margin-left:100px; 
 }

@@ -4,12 +4,13 @@
     <!-- Bootstrapの定形コード… -->
     <!-- 全ての投稿リスト -->
     <!--↓↓ 検索フォーム ↓↓-->
-       <form class="form-inline my-2 my-lg-0 ml-2">
-          <div class="form-group">
-          <input type="search" class="form-control mr-sm-2" name="search"  value="{{request('search')}}" placeholder="キーワードを入力" aria-label="検索...">
-          </div>
-          <input type="submit" value="検索" class="btn btn-info">
-       </form>
+<div class="search">
+    <!--↓↓ 検索フォーム ↓↓-->
+         <form id="form5" class="form-inline my-2 my-lg-0 ml-2">
+              <input id="sbox5" type="search" class="form-control mr-sm-2" name="search"  value="{{request('search')}}" placeholder="キーワードを入力" aria-label="検索..."> 
+              <input id="sbtn5" type="submit" value="検索" class="btn btn-info">
+        </form>
+</div>
     <!--↑↑ 検索フォーム ↑↑-->
     
     @if (count($users) > 0)
@@ -18,7 +19,7 @@
                 <table class="table table-striped task-table">
                     <!-- テーブルヘッダ -->
                     <thead>
-                        <th>ユーザ一覧</th>
+                        <th>あなたにおすすめの壁打ち相手一覧</th>
                         <th>&nbsp;</th>
                     </thead>
                     <!-- テーブル本体 -->
@@ -31,7 +32,7 @@
                                 </td>
                                  <!-- 投稿詳細 -->
                                 <td class="table-text">
-                                    <div>{{ $user->email }}</div>
+                                    <div>{{ $user->tag }}</div>
                                 </td>
 				                
 				                <td class="table-text">
@@ -45,7 +46,7 @@
                                 <td>
                                     <form action="{{ url('chats/'.$user->id) }}" method="GET"> 
                                     {{ csrf_field() }}
-                                    <button type="submit" class="btn btn-primary">メッセージを送る </button>
+                                    <button type="submit" class="btn btn-primary">壁打ちを要請</button>
 	                                </form>
 	                           </td>
                                 @endif

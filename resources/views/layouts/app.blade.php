@@ -46,8 +46,8 @@
                     </ul>
                     
                     <ul class=nav>
-                       <li class="li"><a href="./input"><img src="/image/mymenu.png" width=180px, height=80%></a></li>
-                       <li class="li"><a href="/hp"><img src="/image/myhp.png" width=180px, height=80%></a></li>
+                       <li class="li"><a href="./input"><img src="/image/mymenu.png" width=120px, height=80%></a></li>
+                       <li class="li"><a href="/hp"><img src="/image/myhp.png" width=120px, height=80%></a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

@@ -8,32 +8,32 @@
   <link href="{{ asset('css/style.css') }}" rel="stylesheet">
   <title>ハツラツ</title>
 
-
 <body class="body">
-
   <main>
+
 
     <div class="full_screen">
 
       <!--左エリア-->
-      <div class="left_side">
+    <div class="left_side">
+      <!--<div class="main_img" style="background-image: url(/image/glasses.png)"></div>-->
             <div class="proposal_box_01">
               <div class="proposal_left">
                 <div class="proposal_text"><a href="./products">男性ホルモン唾液検査</a></div>
               </div>
             </div>
-           <div class="proposal_box_02">
+            <div class="proposal_box_02">
               <div class="proposal_left">
-                <div class="proposal_text"><a href="./schedule">HP向上プラン</a></div>
+                <div class="proposal_text"><a href="./hp_posts">HP向上プラン</a></div>
               </div>
             </div>
-           <div class="top-text1">あなたの男性力を<br>測ってみませんか？</div>
-      </div>
-
+            <div class="top-text1">あなたの男性力を<br>測ってみませんか？</div>
+    </div>
+  
       <!--右エリア -->
       <div class="right_side">
        
-            <div class="top-text2">「そーしょく（草食）」を<br>アップデートしよう<br>人生にハツラツと獲物を！！</div>
+            <div class="top-text2">あなたのウェルビーイング<br>が見つかる</div>
             
             <div class="proposal_box_03">
               <div class="proposal_right_01">
@@ -46,13 +46,7 @@
                 <div class="proposal_text"><a href="./users">ビジネス<br>マッチング</a></div>
               </div>
             </div>
-        
-        
       </div>
-
-
-        
-
   </main>
 
   <footer class="footer-text-center">

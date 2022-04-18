@@ -11,16 +11,6 @@
   <title>ハツラツ</title>
 </head>
 
-  <!--Headerエリア--->
-  <header>
-    <div class="menu">
-      <ul class=nav>
-        <li class="li"><a href="./input">ハツラツ生活ナレッジ<br>を投稿</a></li>
-        <li class="li"><a href="./hp">今月のマイHP</a></li>
-      </ul>
-    </div>
-  </header>
-
  <div class=fullscreen>
     <!--↑↑ 検索フォーム ↑↑-->
     @if (count($products) > 0)
@@ -32,24 +22,24 @@
 				                <!-- 商品写真 -->
 				                <div class="product_img">
 				                @if($product->img_url)
-				                <img src="/image/{{ $product->img_url }}" style="max-width:100%; max-height:400px;">
+				                <img src="/image/{{ $product->img_url }}" style="max-width:100%; max-height:300px;">
 				                @endif
 				                </div>
 				                
 				                <div Class="product_under">
     				                <!-- 投稿タイトル -->
                                     <div class="product_title">
-                                        <div>{{ $product->product_title }}</div>
+                                        <div>{{$product->product_name}}</div>
                                     </div>
                                     
                                     <div Class="product_button">
         	                           <!-- 詳細ボタンの表示 -->
                                         <div class="product_detail">
-                                            <form action="{{ url('productsdetail/'.$product->id) }}" method="GET"> 
+                                          <form action="{{ url('productsdetail/'.$product->id) }}" method="GET"> 
                                             {{ csrf_field() }}
-                                            <button type="submit" class="btn btn-primary">購入ページへ </button>
+                                            <button type="submit" class="test_submit">購入ページへ</button>
         	                                </form>
-        	                            </div>
+        	                             </div>
                                     </div>
                         </div>
                         @endforeach

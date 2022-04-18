@@ -26,10 +26,19 @@ public function top()
 
 public function userindex()
     {
-        $users = User ::get();
+
+        $users = User::where("sex", "女性")->orderby('created_at', 'asc')->where(function ($query) {
+            // 検索機能
+            if ($search = request('search')) {
+                $query->where('post_title', 'LIKE', "%{$search}%")->orWhere('post_desc','LIKE',"%{$search}%");
+            }
+            
+        })->get();
+ 
         return view('users',[
-       'users'=> $users
+            'users'=> $users
         ]);
+        
     }
 
 public function index()
@@ -47,12 +56,11 @@ public function index()
         if (Auth::check()) {
              //ログインユーザーのお気に入りを取得
              $favo_posts = Auth::user()->favo_posts()->get();
+             return view('posts',[
+             'posts'=> $posts,
+             'favo_posts'=>$favo_posts
+             ]);
              
-            return view('posts',[
-            'posts'=> $posts,
-            'favo_posts'=>$favo_posts
-            ]);
-            
         }else{
             
             return view('posts',[
@@ -62,6 +70,39 @@ public function index()
         }
        
     }
+    
+    public function hpindex()
+    {
+        
+        $posts = Post::where("hpmenu", "1")->orderBy('created_at', 'asc')->where(function ($query) {
+            
+            // 検索機能
+            if ($search = request('search')) {
+                $query->where('post_title', 'LIKE', "%{$search}%")->orWhere('post_desc','LIKE',"%{$search}%");
+            }
+            
+        })->withCount("favo_user")->get();
+        
+        if (Auth::check()) {
+             //ログインユーザーのお気に入りを取得
+             $favo_posts = Auth::user()->favo_posts()->get();
+             return view('posts',[
+             'posts'=> $posts,
+             'favo_posts'=>$favo_posts
+             ]);
+             
+        }else{
+            
+            return view('posts',[
+            'posts'=> $posts
+            ]);
+            
+        }
+       
+    }
+    
+    
+    
     
     public function input()
     {
@@ -125,7 +166,11 @@ public function index()
         }
         
         $post->post_title = $request->post_title;
+        $post->post_desc_title = $request->post_desc_title;
         $post->post_desc = $request->post_desc;
+        $post->post_fre_what = $request->post_fre_what;
+        $post->post_time_what = $request-> post_time_what;
+        $post->video_url = $request-> video_url;
         $post->user_id = Auth::id();//ここでログインしているユーザidを登録しています
         $post->save();
         
@@ -158,11 +203,13 @@ public function index()
     
     public function detail(Post $post) //にだんがまえ前の仕様
     {
-        $comments = Comment::where("post_id",$post->id)->get();
+        $comments = Comment::orderBy('created_at', 'desc')->where("post_id",$post->id)->get();
+        
+        $posts = Post::orderBy('created_at', 'asc')->withCount("favo_user")->get();
     
         return view('postsdetail',[
             'post'=>$post, //bladeに対してpostテーブル（レコード1本だけ）のデータを渡す
-            'comments'=> $comments
+            'comments'=> $comments //bladeに対してcommentテーブル（レコード1本だけ）のデータを渡す
         ]);
         
     }
@@ -183,7 +230,7 @@ public function index()
         $comment->user_id = Auth::id();//ここでログインしているユーザidを登録しています
         $comment->post_id = $request->id;
         $comment->save(); 
-        return redirect('/posts/'.$request->id);
+        return redirect('/postsdetail/'.$request->id);
     }
     
     

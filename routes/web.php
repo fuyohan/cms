@@ -21,6 +21,9 @@ Route::get('/', [PostsController::class, 'top']);
 //投稿一覧表示
 Route::get('/posts', [PostsController::class, 'index']);
 
+//hp向上専用投稿一覧表示
+Route::get('/hp_posts', [PostsController::class, 'hpindex']);
+
 //投稿フォーム表示
 Route::get('/input', [PostsController::class, 'input']);
 
@@ -79,6 +82,8 @@ Route::get('/productsdetail/{product}',[ProductsController::class, 'detail']);
 //購入＋product tableの在庫を減らす処理
 Route::post('/buy', [ProductsController::class, 'buy']);
 
+//購入完了画面表示
+Route::get('/buycomplete', [ProductsController::class, 'complete']);
 
 //スケジュール登録フォーム表示
 Route::get('/schedule', [ScheduleController::class, 'input']);
