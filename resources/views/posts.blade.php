@@ -58,6 +58,7 @@
                                             <button type="submit" class="btn btn-primary">詳細 </button>
         	                                </form>
         	                            </div>
+        	                            
          				                <!-- お気に入りボタン -->
                                         <div class="post_like">
                                             <form action="{{ url('post/'.$post->id) }}" method="POST">

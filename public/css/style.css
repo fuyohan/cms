@@ -151,10 +151,12 @@ background:  #28bbaa;
 
 .proposal_right_01:hover {
 background: #28bbaa;
+transform:scale(1.1,1.1);
 }
 
 .proposal_right_02:hover {
 background: #28bbaa;
+transform:scale(1.1,1.1);
 }
 
 .proposal_text{

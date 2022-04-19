@@ -205,7 +205,7 @@ public function index()
     {
         $comments = Comment::orderBy('created_at', 'desc')->where("post_id",$post->id)->get();
         
-        $posts = Post::orderBy('created_at', 'asc')->withCount("favo_user")->get();
+        $post->loadCount("favo_user");
     
         return view('postsdetail',[
             'post'=>$post, //bladeに対してpostテーブル（レコード1本だけ）のデータを渡す
@@ -251,6 +251,21 @@ public function index()
         
         //リレーションの登録
         $post->favo_user()->attach($user);
+        
+        return redirect('/posts');
+        
+    }
+    
+     public function favodelete($post_id)
+    {
+        //ログイン中のユーザーを取得
+        $user = Auth::user();
+        
+        //お気に入りする記事
+        $post = Post::find($post_id);
+        
+        //リレーションの登録
+        $post->favo_user()->dettach($user);
         
         return redirect('/posts');
         

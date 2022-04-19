@@ -33,6 +33,9 @@ Route::post('posts', [PostsController::class, 'store']);
 //お気に入りにする処理
 Route::post('post/{post_id}', [PostsController::class, 'favo']);
 
+//お気に入りを外す処理
+Route::post('postfavodelete/{post_id}', [PostsController::class, 'favodelete']);
+
 //更新画面表示
 Route::get('/postsedit/{post}',[PostsController::class, 'edit']);
 
