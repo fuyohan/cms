@@ -36,7 +36,7 @@
             <!--　購入ボタン -->
             <div class="product_detail">
                 <button type="submit" class="test_submit">
-                <a href="./buycomplete">購入する</a>
+                購入する
                 </button>
             </div>
         

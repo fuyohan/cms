@@ -43,7 +43,7 @@ class ProductsController extends Controller
      */
     public function complete()
     {
-         return redirect('/buycomplete');
+         return view('buycomplete');
     }
 
     /**
@@ -81,7 +81,7 @@ class ProductsController extends Controller
         curl_close($ch);
     
         
-        return redirect('/');
+        return redirect('/buycomplete');
     }
     
 
