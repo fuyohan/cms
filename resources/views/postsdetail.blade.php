@@ -61,27 +61,25 @@
                                 <form action="{{ url('schedule/register') }}" method="POST" class="form-horizontal">
                                     {{ csrf_field() }}
                                      
-                                    コースを選択ください。
+                                    <div class="schedule_comment">
+                                        コースを選択ください
                                     <select name="span">
                                         <option value="4">4週間コース</option>
                                         <option value="8">8週間コース</option>
                                         <option value="12">12週間コース</option>
                                     </select>
+                                    </div><br>
                                     
-                                    いつから始めますか？
-                                    <div class="form-group">
-                                        スケジュール
-                                        <div class="col-sm-6">
+                                    
+                                    <div class="schedule_comment">
+                                        いつから始めますか？
                                             <input type="date" name="date" class="form-control">
-                                        </div>
-                                        <div class="col-sm-6">
                                             <input type="time" name="time" class="form-control">
-                                        </div>
-                                    </div>
+                                    </div><br>
                                     
                                     <!--　登録ボタン -->
-                                    <div class="form-group">
-                                        <div class="col-sm-offset-3 col-sm-6">
+                                    <div class="schedule_comment">
+                                        <div class="google_button">
                                             <button type="submit" class="btn btn-primary">
                                                 Googleカレンダー連動
                                             </button>

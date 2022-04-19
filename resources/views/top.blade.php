@@ -52,7 +52,7 @@
   <footer class="footer-text-center">
     <div class="wrapper">
       <a href="#" class="btn-pagetop" id="btn"><span class="fa fa-angle-up icon-up"></span></a>
-      <small class="copyrights">copyrights 2021 minnnano_kenkokatsudo All RIghts Reserved.</small>
+      <small class="copyrights">copyrights 2022 Hatsuratsu All RIghts Reserved.</small>
     </div>
   </footer>
 @endsection

@@ -78,9 +78,9 @@ body{
 
 .top-text2{
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
     color: rgb(248, 252, 255);
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .proposal_box_01{
@@ -121,8 +121,8 @@ body{
 
 .proposal_right_01{
     margin-left:30px;
-    width:260px;
-    height: 250px;
+    width:240px;
+    height: 230px;
     background-color: white;
     display: flex;
     justify-content: center;
@@ -134,8 +134,8 @@ body{
 
 .proposal_right_02{
     margin-left: 300px;
-    width:260px;
-    height: 250px;
+    width:240px;
+    height: 230px;
     background-color: white;
     display: flex;
     justify-content: center;
@@ -179,22 +179,22 @@ transform:scale(1.1,1.1);
 }
 
 .left_side{
-    width: 640px;
+    width: 50%;
     background-image: url("/image/glasses.png");
     background-size: cover;
     height: 800px;
     position: relative;
-    margin-left: 50px;
+    margin-left: 0px;
 }
 
 .right_side{
-    width: 640px;
+    width: 50%;
     background-image: url("/image/top.png");
     background-size: cover;
     height: 800px;
     position: relative;
-    margin-left: 20px;
-    margin-right:50px;
+    margin-left: 10px;
+    margin-right:0px;
     overflow: hidden;
     position: relative; 
 }
@@ -633,9 +633,9 @@ background: #011412;
 }
 
 .footer-text-center{
-    width: 1180px;
-    margin-left: 50px;
-    margin-right: 50px;
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
     margin-top: 10Px;
     padding: 24px 0;
     background-color: #707070;
@@ -1222,7 +1222,7 @@ color:#7fbfff;
 
 .comment_list > li{
    display: flex;
-   background-color: #ccc;
+   background-color: #FFFAFA;
    padding: 8px 0;
    margin-bottom: 10px;
    border-radius: 6px;
@@ -1265,4 +1265,13 @@ color:#7fbfff;
 .hp_chart{
     max-width: 1000px;
     margin-left:100px; 
+}
+
+.schedule_comment{
+    font-size: 40px;
+    background-color: white;
+}
+
+.google_button .btn btn-primary{
+     font-size: 40px;
 }
