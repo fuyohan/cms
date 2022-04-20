@@ -24,16 +24,17 @@
             
             <div class="post_02">
               <div class="post_title_for_detail">週に何回やっている？</div>
-              <div class="post_02_desc">{!!nl2br(e($post->post_fre_what))!!}</div>
+              <div class="post_02_desc">{!!nl2br(e($post->post_fre_what))!!} 回</div>
             </div>
             
             <div class="post_02">
               <div class="post_title_for_detail">毎回何時間かかる？</div>
-              <div class="post_02_desc">{!!nl2br(e($post->post_time_what))!!}</div>
+              <div class="post_02_desc">{!!nl2br(e($post->post_time_what))!!} 時間</div>
             </div>
             
             <div class="post_03">
-                <iframe width=50% height=50% 
+                <div class="post_title_for_detail">参考動画のシェア</div>
+                <iframe width=100% height=100% 
 				src={{$post->video_url}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 				</iframe>
             </div>

@@ -881,6 +881,7 @@ margin-top: 30px;
 
 .post_title_for_detail{
      font-size: 20px;
+     font-weight: bold;
      margin-bottom: 10px;
 }
 
@@ -1156,6 +1157,7 @@ margin-top: 30px;
     background: #fff;
     font-size: 16px;
     float: left;
+    margin-left:500px; 
     width: 100%;
     position: relative;
     padding: 25px 30px 30px;
@@ -1298,4 +1300,8 @@ color:#7fbfff;
 
 .google_button .btn btn-primary{
      font-size: 40px;
+}
+
+.hpinput{
+    margin-left: 500px;
 }

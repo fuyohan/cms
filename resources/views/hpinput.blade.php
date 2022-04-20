@@ -2,9 +2,9 @@
 @extends('layouts.app')
 @section('content')
     <!-- Bootstrapの定形コード… -->
-    <div class="card-body">
+    <div class="hpinput">
         <div class="card-title">
-            投稿フォーム
+            会員HP検査結果 インプットフォーム
         </div>
         <!-- バリデーションエラーの表示に使用-->
     	@include('common.errors')
@@ -43,7 +43,7 @@
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-6">
                     <button type="submit" class="btn btn-primary">
-                        Save
+                        登録
                     </button>
                 </div>
             </div>
