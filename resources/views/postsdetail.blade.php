@@ -104,33 +104,47 @@
             <div class="post_05">
                 <div class="post_05_comment">
                 <!-- コメントされた内容一覧 -->
-                
+                <h2>専門家コメント<h2>
                     <ul class="comment_list">
                     @foreach ($comments as $comment)
+                    @if ($comment->user->pro==1)
                                 <li class="comment-text">
                                     <div class="comment_list_user">
-                                      
                                       <div class="image_box"><img src="/uploads/{{ $comment->user->img_url }}" width="60px" height="60px"></div>
                                       <h2>{{ $comment->user->name }}</h2>
-                                      
-                                    
                                     </div>
                                     
                                     <div class="comment_list_comment">
-                                    
-              
-                                    <p>{{ $comment->comment_desc}}</p>
-                                    
+                                      <p>{{ $comment->comment_desc}}</p>
                                     <div>
-                                    
                                 </li>
+                    @endif
+                    @endforeach
+                    </ul>
+                    <br>
+                    <br>
+                    <h2>ユーザーコメント<h2>
+                    <ul class="comment_list">
+                    @foreach ($comments as $comment)
+                    @if ($comment->user->pro==0)
+                                <li class="comment-text">
+                                    <div class="comment_list_user">
+                                      <div class="image_box"><img src="/uploads/{{ $comment->user->img_url }}" width="60px" height="60px"></div>
+                                      <h2>{{ $comment->user->name }}</h2>
+                                    </div>
+                                    
+                                    <div class="comment_list_comment">
+                                      <p>{{ $comment->comment_desc}}</p>
+                                    <div>
+                                </li>
+                    @endif
                     @endforeach
                     </ul>
                     
+                    
                 </div>
                 <div class="post_05_comment_button">
-                    
-                    
+                   
                 <form action="{{ url('postsdocomment') }}" method="POST" class="form-horizontal" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <!-- item_name -->

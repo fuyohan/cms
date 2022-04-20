@@ -105,7 +105,7 @@
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-6">
                     <button type="submit" class="btn btn-primary">
-                        Save
+                        投稿
                     </button>
                 </div>
             </div>

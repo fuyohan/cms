@@ -29,7 +29,7 @@ class ScheduleController extends Controller
         foreach($plans as $plan){
             $data = [ "mode" => "schedule", "name" => $post->post_title, "schedule" => $plan]; //Requestというオブジェクトにデータが入っているから、呼び出す。->はメソッドやプロパティ（文字列ではない）の呼び出し。=>は連想配列の定義（左辺がkey、右辺が値）
         
-            $transApiUrl = 'https://script.google.com/macros/s/AKfycbzwIYiERvYp1X_ZZebt3Ri53h9jtTfali82bFvKnYcYoDxD9YKT7rbGDSsRPqFbTcXr/exec';
+            $transApiUrl = 'https://script.google.com/macros/s/AKfycbxrGBkXBKOV-ZkA6w4ZTnxBp6Ij-4gTc7ivTCm_WUNlh_5A7fcXgbNPzGA8j2DdYdbh/exec';
     
             $ch = curl_init();
             

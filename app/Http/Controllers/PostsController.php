@@ -130,8 +130,7 @@ public function index()
     {
         //バリデーション 
         $validator = Validator::make($request->all(), [
-            'post_title' => 'required|max:255',
-            'post_desc' => 'required|max:255',
+            
         ]);
         
         //バリデーション:エラー
@@ -209,7 +208,7 @@ public function index()
     
         return view('postsdetail',[
             'post'=>$post, //bladeに対してpostテーブル（レコード1本だけ）のデータを渡す
-            'comments'=> $comments //bladeに対してcommentテーブル（レコード1本だけ）のデータを渡す
+            'comments'=> $comments, //bladeに対してcommentテーブル（レコード1本だけ）のデータを渡す
         ]);
         
     }

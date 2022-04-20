@@ -120,10 +120,13 @@ body{
 }
 
 .proposal_right_01{
-    margin-left:30px;
+    background-image: url("/image/hatsuratsu.png");
+    background-position: center;
+    background-size: 120%;
+    margin-left:40px;
     width:240px;
     height: 230px;
-    background-color: white;
+    /*background-color: white;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -133,10 +136,14 @@ body{
 }
 
 .proposal_right_02{
+    background-image: url("/image/female.png");
+    background-position: top;
+    opacity: 0.9;
+    background-size: 120%;
     margin-left: 300px;
     width:240px;
     height: 230px;
-    background-color: white;
+   /*background-color: white;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -150,22 +157,38 @@ background:  #28bbaa;
 }
 
 .proposal_right_01:hover {
-background: #28bbaa;
-transform:scale(1.1,1.1);
+/*background: #28bbaa;*/
+transform:scale(1.2,1.2);
 }
 
 .proposal_right_02:hover {
-background: #28bbaa;
-transform:scale(1.1,1.1);
+/*background: #28bbaa;*/
+transform:scale(1.2,1.2);
 }
 
-.proposal_text{
+
+.proposal_text_left{
     color: aliceblue;
     font-size: 35px;
     font-weight: bold;
 }
 
-.proposal_text a{
+.proposal_text_left a{
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration:none;
+    color: #011412;
+}
+
+.proposal_text_right{
+    color: aliceblue;
+    font-size: 35px;
+    font-weight: bold;
+    background-color: white;
+    opacity: 0.8;
+}
+
+.proposal_text_right a{
     font-size: 30px;
     font-weight: bold;
     text-decoration:none;
@@ -750,6 +773,7 @@ margin-top: 30px;
 .post_block{
     width:23%;
     margin-right: 15px;
+    margin-bottom: 15px;
 }
 
 .post_img img{

@@ -19,12 +19,12 @@
       <!--<div class="main_img" style="background-image: url(/image/glasses.png)"></div>-->
             <div class="proposal_box_01">
               <div class="proposal_left">
-                <div class="proposal_text"><a href="./products">男性ホルモン唾液検査</a></div>
+                <div class="proposal_text_left"><a href="./products">男性ホルモン唾液検査</a></div>
               </div>
             </div>
             <div class="proposal_box_02">
               <div class="proposal_left">
-                <div class="proposal_text"><a href="./hp_posts">HP向上プラン</a></div>
+                <div class="proposal_text_left"><a href="./hp_posts">HP向上プラン</a></div>
               </div>
             </div>
             <div class="top-text1">あなたの男性力を<br>測ってみませんか？</div>
@@ -37,13 +37,13 @@
             
             <div class="proposal_box_03">
               <div class="proposal_right_01">
-                <div class="proposal_text"><a href="./posts">みんなの<br>ハツラツ</a></div>
+                <div class="proposal_text_right"><a href="./posts">みんなの<br>ハツラツ</a></div>
               </div>
             </div>
             
             <div class="proposal_box_04">
               <div class="proposal_right_02">
-                <div class="proposal_text"><a href="./users">ビジネス<br>マッチング</a></div>
+                <div class="proposal_text_right"><a href="./users">かべうち<br>マッチング</a></div>
               </div>
             </div>
       </div>
