@@ -18,6 +18,9 @@ use App\Http\Controllers\ProductsController;//追記
 //TOPページ表示
 Route::get('/', [PostsController::class, 'top']);
 
+//TOPページ表示(女性)
+Route::get('/female', [PostsController::class, 'top_female']);
+
 //投稿一覧表示
 Route::get('/posts', [PostsController::class, 'index']);
 
@@ -64,8 +67,11 @@ Route::get('/img', [ImgController::class, 'index']);
 //プロフィール画像アップロード処理
 Route::post('/img/upload',[ImgController::class, 'upload']);
 
-//ユーザー一覧表示
+//ユーザー一覧表示（男性用）
 Route::get('/users', [PostsController::class, 'userindex']);
+
+//ユーザー一覧表示（女性用）
+Route::get('/users_female', [PostsController::class, 'userindex_female']);
 
 //hp投稿一覧表示
 Route::get('/hp', [HpsController::class, 'index']);

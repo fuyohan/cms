@@ -10,6 +10,7 @@
 				@endif
             </div>
             
+            @if ($user->sex=="女性")
             <div class="post_02">
               <div class="post_title_for_detail">自己紹介</div>
               <div class="post_02_desc">{!!nl2br(e($user->intro))!!}</div>
@@ -29,6 +30,27 @@
               <div class="post_title_for_detail">タグ</div>
               <div class="post_02_desc">{!!nl2br(e($user->tag))!!}</div>
             </div>
+            @else
+            <div class="post_02">
+              <div class="post_title_for_detail">自己紹介</div>
+              <div class="post_02_desc">{!!nl2br(e($user->intro))!!}</div>
+            </div>
+
+            <div class="post_02">
+              <div class="post_title_for_detail">話を聞いてもらいたい・壁打ちしたいこと</div>
+              <div class="post_02_desc">{!!nl2br(e($user->purpose))!!}</div>
+            </div>
+            
+            <div class="post_02">
+              <div class="post_title_for_detail">壁打ちを受けたい・受けられること</div>
+              <div class="post_02_desc">{!!nl2br(e($user->skill))!!}</div>
+            </div>
+            
+            <div class="post_02">
+              <div class="post_title_for_detail">タグ</div>
+              <div class="post_02_desc">{!!nl2br(e($user->tag))!!}</div>
+            </div>
+            @endif
             
     </div>
     <div class="col-md-12">

@@ -95,6 +95,18 @@ body{
     text-decoration: none;
 }
 
+.proposal_box_01_female{
+    margin-top: 380px;
+    margin-left: 0px;
+    text-decoration: none;
+}
+
+.proposal_box_02_female{
+    margin-top: 80px;
+    margin-left: 0px;
+    text-decoration: none;
+}
+
 .proposal_box_03{
     margin-top: 120px;
     margin-left: 0px;
@@ -202,8 +214,17 @@ transform:scale(1.2,1.2);
 }
 
 .left_side{
-    width: 50%;
+    width: 55%;
     background-image: url("/image/glasses.png");
+    background-size: cover;
+    height: 800px;
+    position: relative;
+    margin-left: 0px;
+}
+
+.left_side_female{
+    width: 50%;
+    background-image: url("/image/TOP女性.jpg");
     background-size: cover;
     height: 800px;
     position: relative;
@@ -817,12 +838,12 @@ margin-top: 30px;
 
 .post_left_side{
    width:640px;
-   margin:50px; 
+   margin-left:50px; 
 }
 
 .post_right_side{
     width:640px; 
-    margin:50px; 
+    margin:25px; 
 }
 
 .post_01{
@@ -1007,7 +1028,6 @@ margin-top: 30px;
 .chat_list li p{
     width: 45%;
     max-width: 45%;
-    
     padding:12px 16px;
     border-radius: 12px;
 }
@@ -1304,4 +1324,20 @@ color:#7fbfff;
 
 .hpinput{
     margin-left: 500px;
+}
+
+.container_register{
+    background-image: url("/image/会員登録女性.png");
+    background-size: cover;
+}
+
+.card-body{
+    margin-left: 10px;
+    font-size: 25Px;
+    max-width: 98%;
+}
+
+.recommend{
+    font-size: 14px;
+    background-color:white;
 }

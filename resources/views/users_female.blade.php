@@ -13,7 +13,7 @@
 </div>
     <!--↑↑ 検索フォーム ↑↑-->
     
-    @if (count($users) > 0)
+    @if (count($users_male)>0)
         <div class="card-body">
             <div class="card-body">
                 <table class="table table-striped task-table">
@@ -24,30 +24,29 @@
                     </thead>
                     <!-- テーブル本体 -->
                     <tbody>
-                        @foreach ($users as $user)
+                        @foreach ($users_male as $user_male))
                             <tr>
                                 <!-- 投稿タイトル -->
                                 <td class="table-text">
-                                    <div>{{ $user->name }}</div>
+                                    <div>{{ $user_male->name }}</div>
                                 </td>
-                                
-                                <td class="table-text">
-				                @if($user->img_url)
-				                <img src="/uploads/{{ $user->img_url }}">
+				                <td class="table-text">
+				                @if($user_male->img_url)
+				                <img src="/uploads/{{ $user_male->img_url }}">
 				                @endif
 				                </td>
                                  <!-- 投稿詳細 -->
                                 <td class="table-text">
-                                    <div>{{ $user->tag }}</div>
+                                    <div>{{ $user_male->tag }}</div>
                                 </td>
-				                
 
+				                
 				                @if( Auth::check() )
                                 <!-- chatボタンの表示 -->
                                 <td>
-                                    <form action="{{ url('chats/'.$user->id) }}" method="GET"> 
+                                    <form action="{{ url('chats/'.$user_male->id) }}" method="GET"> 
                                     {{ csrf_field() }}
-                                    <button type="submit" class="btn btn-primary">壁打ちを要請</button>
+                                    <button type="submit" class="btn btn-primary">話を聞きたい！</button>
 	                                </form>
 	                           </td>
                                 @endif

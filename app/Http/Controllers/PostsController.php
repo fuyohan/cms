@@ -22,6 +22,11 @@ public function top()
     {
         return view('top');
     }
+    
+public function top_female()
+    {
+        return view('top_female');
+    }
 
 
 public function userindex()
@@ -30,13 +35,30 @@ public function userindex()
         $users = User::where("sex", "女性")->orderby('created_at', 'asc')->where(function ($query) {
             // 検索機能
             if ($search = request('search')) {
-                $query->where('post_title', 'LIKE', "%{$search}%")->orWhere('post_desc','LIKE',"%{$search}%");
+                $query->where('intro', 'LIKE', "%{$search}%")->orWhere('skill','LIKE',"%{$search}%");
             }
             
         })->get();
  
         return view('users',[
             'users'=> $users
+        ]);
+        
+    }
+
+public function userindex_female()
+    {
+
+        $users_male = User::where("sex", "男性")->orderby('created_at', 'asc')->where(function ($query) {
+            // 検索機能
+            if ($search = request('search')) {
+                $query->where('intro', 'LIKE', "%{$search}%")->orWhere('skill','LIKE',"%{$search}%");
+            }
+            
+        })->get();
+ 
+        return view('users_female',[
+            'users_male'=> $users_male
         ]);
         
     }
