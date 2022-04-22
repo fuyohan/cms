@@ -75,18 +75,22 @@ public function index()
             
         })->withCount("favo_user")->get();
         
+        $users = User::orderby('created_at', 'asc')->get();
+        
         if (Auth::check()) {
              //ログインユーザーのお気に入りを取得
              $favo_posts = Auth::user()->favo_posts()->get();
              return view('posts',[
              'posts'=> $posts,
-             'favo_posts'=>$favo_posts
+             'favo_posts'=>$favo_posts,
+             'users'=> $users,
              ]);
              
         }else{
             
             return view('posts',[
-            'posts'=> $posts
+            'posts'=> $posts,
+            'users'=> $users,
             ]);
             
         }

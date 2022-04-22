@@ -1342,7 +1342,6 @@ color:#7fbfff;
 }
 
 
-
 .col-sm-6-product{
      font-size: 18px;
 }
@@ -1354,3 +1353,10 @@ color:#7fbfff;
 .form-group-hpinput{
       font-size: 14px;
 }
+
+.post_user_image img{
+    border-radius: 50%;
+    border-bottom-color: gray;
+    border-weight:bold;
+}
+

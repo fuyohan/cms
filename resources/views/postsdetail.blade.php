@@ -6,11 +6,22 @@
         <!--左エリア-->
         <div class="post_left_side">
             
+            
+          
             <div class="post_01">
                 @if($post->img_url)
 				<img src="/uploads/{{ $post->img_url }}" style="max-width:100%; max-height:500px;">
 				@endif
             </div>
+            
+            <div class="post_02">
+             <div class="post_title_for_detail">投稿者：{{ $post->user->name }}さん</div>
+			 <div class="post_user_image"><img src="/uploads/{{ $post->user->img_url }}" width="60px" height="60px"></div>
+            </div>
+           
+ 
+            
+
             
             <div class="post_02">
               <div class="post_title_for_detail">やることを一言でいうと</div>
