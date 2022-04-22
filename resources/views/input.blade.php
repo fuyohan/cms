@@ -100,6 +100,13 @@
                     <input type="text" name="video_url" class="form-control">
                 </div>
             </div>
+            
+            <div class="form-group">
+                使用しているサービスあれば、リンクを貼り付けてください。
+                <div class="col-sm-6">
+                    <input type="text" name="video_url" class="form-control">
+                </div>
+            </div>
 
             <!--　登録ボタン -->
             <div class="form-group">

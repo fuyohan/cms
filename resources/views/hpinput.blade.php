@@ -14,7 +14,7 @@
         <form action="{{ url('hppost') }}" method="POST" class="form-horizontal">
             {{ csrf_field() }}
             <!-- 投稿のタイトル -->
-            <div class="form-group">
+            <div class="form-group-hpinput">
                 ユーザーID
                 <div class="col-sm-6">
                     <select name="user_id" class="form-control">

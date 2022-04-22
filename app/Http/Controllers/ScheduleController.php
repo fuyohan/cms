@@ -27,9 +27,9 @@ class ScheduleController extends Controller
         $post = Post::find($request->post_id);
         
         foreach($plans as $plan){
-            $data = [ "mode" => "schedule", "name" => $post->post_title, "schedule" => $plan]; //Requestというオブジェクトにデータが入っているから、呼び出す。->はメソッドやプロパティ（文字列ではない）の呼び出し。=>は連想配列の定義（左辺がkey、右辺が値）
+            $data = [ "mode" => "schedule", "name" => $post->post_title,  "describe" => $post->post_desc,  "link" => $post->post_fre_title, "video" => $post->video_url, "schedule" => $plan]; //Requestというオブジェクトにデータが入っているから、呼び出す。->はメソッドやプロパティ（文字列ではない）の呼び出し。=>は連想配列の定義（左辺がkey、右辺が値）
         
-            $transApiUrl = 'https://script.google.com/macros/s/AKfycbxrGBkXBKOV-ZkA6w4ZTnxBp6Ij-4gTc7ivTCm_WUNlh_5A7fcXgbNPzGA8j2DdYdbh/exec';
+            $transApiUrl = 'https://script.google.com/macros/s/AKfycbys4WD2hGU_gGLfW04qPEAu3Ta7c5LFd9AXOR7-tB9RTZWMFTyaMfHFKyCnx7Omg3Op/exec';
     
             $ch = curl_init();
             

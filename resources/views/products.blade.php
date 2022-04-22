@@ -21,8 +21,8 @@
                          
 				                <!-- 商品写真 -->
 				                <div class="product_img">
-				                @if($product->img_url)
-				                <img src="/image/{{ $product->img_url }}" style="max-width:100%; max-height:300px;">
+				                @if($product->product_desc)
+				                <img src="/image/{{ $product->product_desc }}" style="max-width:100%; max-height:300px;">
 				                @endif
 				                </div>
 				                

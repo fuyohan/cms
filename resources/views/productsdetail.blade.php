@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="row">
+<div class="row_productdetail">
     <div class="col-md-12">
     @include('common.errors')
             <!-- item_name -->
@@ -8,11 +8,11 @@
                 
                 <div class="product_name"><h1>{{$product->product_name}}</h1></div>
     
-                <div class="product_desc">{{$product->product_desc}}</div>
+                <!--<div class="product_desc">{{$product->product_desc}}</div>-->
                 
                 <div class="product_img">
     				@if($product->img_url)
-    				<img src="/image/{{ $product->img_url }}" style="max-width:200px; max-height:200px;">
+    				<img src="/image/{{ $product->img_url }}" style="max-width:800px; max-height:600px;">
     				@endif
 			    </div>
              </div>
@@ -20,9 +20,9 @@
             <form action="{{ url('/buy') }}" method="POST" class="form-horizontal" enctype="multipart/form-data">
             {{ csrf_field() }}
             <!-- 投稿のタイトル -->
-            <div class="form-group">
+            <div class="form-group-product">
                 <h2>ご購入の個数を選択ください。</h2>
-                <div class="col-sm-6">
+                <div class="col-sm-6-product">
                     <select name="nos" class="form-control">
                         <option value="1">1回セット</option>
                         <option value="2">2回セット</option>

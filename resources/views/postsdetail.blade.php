@@ -38,6 +38,11 @@
 				src={{$post->video_url}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 				</iframe>
             </div>
+            
+            <div class="post_02">
+              <div class="post_title_for_detail">サービスアクセス</div>
+              <div class="post_02_desc">{!!nl2br(e($post->post_fre_title))!!} </div>
+            </div>
         </div>
     
         <!--右エリア -->

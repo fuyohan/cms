@@ -1333,11 +1333,24 @@ color:#7fbfff;
 
 .card-body{
     margin-left: 10px;
-    font-size: 25Px;
+    font-size: 20Px;
     max-width: 98%;
+}
+
+.row_productdetail{
+    margin-left: 350px;
+}
+
+
+
+.col-sm-6-product{
+     font-size: 18px;
 }
 
 .recommend{
     font-size: 14px;
     background-color:white;
+}
+.form-group-hpinput{
+      font-size: 14px;
 }
