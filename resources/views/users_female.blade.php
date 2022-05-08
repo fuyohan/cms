@@ -19,12 +19,12 @@
                 <table class="table table-striped task-table">
                     <!-- テーブルヘッダ -->
                     <thead>
-                        <th>あなたにおすすめの壁打ち相手一覧</th>
+                        <th>あなたにおすすめの壁打ち相手ー一覧</th>
                         <th>&nbsp;</th>
                     </thead>
                     <!-- テーブル本体 -->
                     <tbody>
-                        @foreach ($users_male as $user_male))
+                        @foreach ($users_male as $user_male)
                             <tr>
                                 <!-- 投稿タイトル -->
                                 <td class="table-text">
@@ -39,7 +39,6 @@
                                 <td class="table-text">
                                     <div>{{ $user_male->tag }}</div>
                                 </td>
-
 				                
 				                @if( Auth::check() )
                                 <!-- chatボタンの表示 -->

@@ -18,9 +18,13 @@ class PostsController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-public function top()
+
+public function top_new()
     {
-        return view('top');
+        $users = User::orderby('created_at', 'asc')->get();
+        return view('top_new',[
+            'users'=> $users
+            ]);
     }
     
 public function top_female()

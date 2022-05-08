@@ -16,7 +16,7 @@ use App\Http\Controllers\ChatsController;//追記
 use App\Http\Controllers\ProductsController;//追記
 
 //TOPページ表示
-Route::get('/', [PostsController::class, 'top']);
+Route::get('/', [PostsController::class, 'top_new']);
 
 //TOPページ表示(女性)
 Route::get('/female', [PostsController::class, 'top_female']);

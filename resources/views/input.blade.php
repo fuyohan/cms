@@ -5,7 +5,11 @@
 <div class="input-full_screen">
     <div class="input-box">
         <div class="card-title">
-            あなたのハツラツを共有しましょう
+        「はつらつ」はウェルネスを高める活動・日常のレシピ化を目指しています。<br>
+        
+        身体・精神ともに良いコンディションを保つ為に実践した（している）ことを教えてください<br>
+        
+        （運動・食事への気遣い・趣味への没頭・家族のケア・自己啓発、等）<br><br>
         </div>
         <!-- バリデーションエラーの表示に使用-->
     	@include('common.errors')
@@ -16,7 +20,7 @@
             {{ csrf_field() }}
             <!-- 投稿のタイトル -->
             <div class="form-group">
-                投稿のタイトル
+                タイトル
                 <div class="col-sm-6">
                     <input type="text" name="post_title" class="form-control">
                 </div>
@@ -24,7 +28,7 @@
             
             <!-- 投稿本文のタイトル -->
             <div class="form-group">
-                やることを一言でいうと
+                実践した（している）ことを一言でいうと
                 <div class="col-sm-6">
                     <input type="text" name="post_desc_title" class="form-control">
                 </div>
@@ -32,7 +36,7 @@
             
             <!-- 投稿の本文 -->
             <div class="form-group">
-                実際にやっていることを記載ください
+                もう少し詳しく教えてください。
                 <div class="col-sm-6">
                     <textarea  class="form-control" type="text" name="post_desc" rows="5" placeholder="実際に行動している内容を入力してください">
                     実際に行動している内容を入力してください
@@ -90,7 +94,7 @@
             </div>
             
             <div class="form-group">
-                この健康法を表す写真のアップロードにご協力ください。<br>
+                このウェルネス活動を表す写真のアップロードにご協力ください。<br>
                 <input id="fileUploader" type="file" name="img" accept='image/' enctype="multipart/form-data" multiple="multiple" required autofocus>
             </div>
 
@@ -102,7 +106,7 @@
             </div>
             
             <div class="form-group">
-                使用しているサービスあれば、リンクを貼り付けてください。
+                使用しているサービスがあれば、リンクを貼り付けてください。
                 <div class="col-sm-6">
                     <input type="text" name="video_url" class="form-control">
                 </div>
@@ -112,7 +116,7 @@
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-6">
                     <button type="submit" class="btn btn-primary">
-                        投稿
+                        レシピ化
                     </button>
                 </div>
             </div>

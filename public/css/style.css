@@ -216,6 +216,7 @@ transform:scale(1.2,1.2);
 .left_side{
     width: 55%;
     background-image: url("/image/glasses.png");
+    /*background-image: url("/image/top.png");*/
     background-size: cover;
     height: 800px;
     position: relative;
@@ -241,6 +242,93 @@ transform:scale(1.2,1.2);
     margin-right:0px;
     overflow: hidden;
     position: relative; 
+}
+
+.full_screen_new{
+    width: 100%;
+    margin: auto;
+    background-color: #00CCCC;
+    background-size: cover;
+    height: 800px;
+    position: relative;
+    margin-left: 0px;
+    margin-right:0px;
+    overflow: hidden;
+    position: relative; 
+}
+
+.proposal_box{
+    display: flex;
+}
+
+.proposal_box_05{
+    width: 50%;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.proposal_box_06{
+    width: 50%;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.proposal_05{
+    background-image: url("/image/hatsuratsu.png");
+    background-position: center;
+    background-size: 120%;
+    margin:auto;
+    width:420px;
+    height: 400px;
+    /*background-color: white;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:solid 5px #c9c9c9;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.proposal_06{
+    background-image: url("/image/female.png");
+    background-position: top;
+    opacity: 0.9;
+    background-size: 120%;
+    margin:auto;
+    width:420px;
+    height: 400px;
+   /*background-color: white;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:solid 5px #c9c9c9;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.proposal_05:hover {
+/*background: #28bbaa;*/
+transform:scale(1.2,1.2);
+}
+
+.proposal_06:hover {
+/*background: #28bbaa;*/
+transform:scale(1.2,1.2);
+}
+
+.proposal_text{
+    color: aliceblue;
+    font-size: 35px;
+    font-weight: bold;
+    background-color: white;
+    opacity: 0.8;
+}
+
+.proposal_text a{
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration:none;
+    color: #011412;
 }
 
 .main_img {
@@ -1173,14 +1261,19 @@ margin-top: 30px;
 .input-full_screen{
     display: flex;
 }
+
 .input-box{
     background: #fff;
     font-size: 16px;
-    float: left;
-    margin-left:500px; 
+    margin-left: 10%; 
+    margin-right: 10%; 
     width: 100%;
     position: relative;
     padding: 25px 30px 30px;
+}
+
+.card-title{
+    font-size: 20px;
 }
 
 .open {
