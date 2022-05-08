@@ -36,7 +36,7 @@ public function top_female()
 public function userindex()
     {
 
-        $users = User::where("sex", "女性")->orderby('created_at', 'asc')->where(function ($query) {
+        $users = User::where("sex", "女性")->orderby('created_at', 'desc')->where(function ($query) {
             // 検索機能
             if ($search = request('search')) {
                 $query->where('intro', 'LIKE', "%{$search}%")->orWhere('skill','LIKE',"%{$search}%");
@@ -53,7 +53,7 @@ public function userindex()
 public function userindex_female()
     {
 
-        $users_male = User::where("sex", "男性")->orderby('created_at', 'asc')->where(function ($query) {
+        $users_male = User::where("sex", "男性")->orderby('created_at', 'desc')->where(function ($query) {
             // 検索機能
             if ($search = request('search')) {
                 $query->where('intro', 'LIKE', "%{$search}%")->orWhere('skill','LIKE',"%{$search}%");
@@ -70,7 +70,7 @@ public function userindex_female()
 public function index()
     {
         
-        $posts = Post::orderBy('created_at', 'asc')->where(function ($query) {
+        $posts = Post::orderBy('created_at', 'desc')->where(function ($query) {
             
             // 検索機能
             if ($search = request('search')) {

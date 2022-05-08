@@ -17,7 +17,7 @@
 <div class="search">
     <!--↓↓ 検索フォーム ↓↓-->
          <form id="form5" class="form-inline my-2 my-lg-0 ml-2">
-              <input id="sbox5" type="search" class="form-control mr-sm-2" name="search"  value="{{request('search')}}" placeholder="キーワードを入力" aria-label="検索..."> 
+              <input id="sbox5" type="search" class="form-control mr-sm-2" name="search"  value="{{request('search')}}" placeholder="どのようなウェルネスレシピを探していますか？" aria-label="検索..."> 
               <input id="sbtn5" type="submit" value="検索" class="btn btn-info">
         </form>
 </div>
