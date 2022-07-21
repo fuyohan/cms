@@ -26,7 +26,7 @@
                     <tbody>
                         @foreach ($users as $user)
                             
-                            @if($user->follow_done==0)
+                            @if($user->follow_done==1 && $user->followed_done==1) <!--相互フォローしているかどうか、andifを書きたい場合は&&を使う-->
                             <tr>
                                 <!-- User名前 -->
                                 <td class="table-text">

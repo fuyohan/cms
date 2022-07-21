@@ -46,22 +46,22 @@
                                     </div>
     				                
     				                <!-- 投稿者名の表示 -->
-                                    <!--<div class="table-text">
+                                    <div class="table-text">
                                         <div>{{ $post->user->name }}</div>
-                                    </div>-->
+                                    </div>
                                     
-                                    <div Class="post_button">
+                                    <div class="post_button">
         	                           <!-- 詳細ボタンの表示 -->
                                         <div class="post_detail">
                                             <form action="{{ url('postsdetail/'.$post->id) }}" method="GET"> 
                                             {{ csrf_field() }}
-                                            <button type="submit" class="btn btn-primary">詳細 </button>
+                                            <button type="submit" class="btn btn-primary">詳細</button>
         	                                </form>
         	                            </div>
         	                            
          				                <!-- お気に入りボタン -->
                                         <div class="post_like">
-                                            <form action="{{ url('post/'.$post->id) }}" method="POST">
+                                            <form action="{{ url('post/'.$post->id) }}" method="POST"> //post/というURL（ルーティング）にリクエストを送信している
                                                 {{ csrf_field() }}
                                                 <button type="submit" class="btn btn-danger">継続中👍</button>
                                             </form>

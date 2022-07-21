@@ -42,9 +42,41 @@ public function userindex()
                 $query->where('intro', 'LIKE', "%{$search}%")->orWhere('skill','LIKE',"%{$search}%");
             }
             
-        })->get();
+        })->withCount(['followers as follow_done'=>function ($query) { 
+            //userそれぞれに対して0か1の情報をとってくる（withcountのちょっと特別な使い方）。followersというリレーション（モデルの）を使う。ただし、followerの数をカウントしたい場合と被らないように、変数名にas follow_doneを加えている。
+            //片方だけを評価（＝自分がフォローしているかどうかを判定）
+            //もし相互フォローの判定をしたい場合は、followeeに対して逆の書き方をする。
+            $query->where('follower_id',Auth::id());
+        }])->get();
  
         return view('users',[
+            'users'=> $users
+        ]);
+        
+    }
+
+public function user_follow_index()
+    {
+
+        $users = User::where("sex", "女性")->orderby('created_at', 'desc')->where(function ($query) {
+            // 検索機能
+            if ($search = request('search')) {
+                $query->where('intro', 'LIKE', "%{$search}%")->orWhere('skill','LIKE',"%{$search}%");
+            }
+            
+        })->withCount(['followers as follow_done'=>function ($query) { 
+            //userそれぞれに対して0か1の情報をとってくる（withcountのちょっと特別な使い方）。followersというリレーション（モデルの）を使う。ただし、followerの数をカウントしたい場合と被らないように、変数名にas follow_doneを加えている。
+            //片方だけを評価（＝自分がフォローしているかどうかを判定）
+            //もし相互フォローの判定をしたい場合は、followeeに対して逆の書き方をする。
+            $query->where('follower_id',Auth::id()); //follower_idが自分であるかどうかの判定
+        
+        },'followees as followed_done'=>function ($query){
+            
+            $query->where('followee_id',Auth::id());//followee_idが自分であるかどうかの判定
+            
+        } ])->get();
+ 
+        return view('users_follow',[
             'users'=> $users
         ]);
         
@@ -77,7 +109,7 @@ public function index()
                 $query->where('post_title', 'LIKE', "%{$search}%")->orWhere('post_desc','LIKE',"%{$search}%");
             }
             
-        })->withCount("favo_user")->get();
+        })->withCount("favo_user")->get(); //この記事に対してお気に入りしているユーザーの数をカウントする。get メソッドの前にwithcountを挟む。
         
         $users = User::orderby('created_at', 'asc')->get();
         
@@ -132,13 +164,10 @@ public function index()
     }
     
     
-    
-    
     public function input()
     {
         return view('input');
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -275,10 +304,10 @@ public function index()
         //ログイン中のユーザーを取得
         $user = Auth::user();
         
-        //お気に入りする記事
+        //お気に入りする記事(blade fileでの操作でidが渡されている ⇒ find：pそのidでoposttableからデータを取ってくる)
         $post = Post::find($post_id);
         
-        //リレーションの登録
+        //リレーションの登録(この記事に対するfavo_userとして、ログインユーザーを登録する)
         $post->favo_user()->attach($user);
         
         return redirect('/posts');
@@ -293,12 +322,13 @@ public function index()
         //お気に入りする記事
         $post = Post::find($post_id);
         
-        //リレーションの登録
+        //リレーションの登録(この記事のfavo_userとして登録されているログインユーザーを外す)
         $post->favo_user()->dettach($user);
         
         return redirect('/posts');
         
     }
+    
     
     public function update(Request $request)
     {

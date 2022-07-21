@@ -33,10 +33,10 @@ Route::get('/input', [PostsController::class, 'input']);
 //投稿処理
 Route::post('posts', [PostsController::class, 'store']);
 
-//お気に入りにする処理
+//投稿をお気に入りにする処理 （URLの一部としてpost_idを入れている＝Bladeのボタンにidが埋め込まれており、そのidが飛んでくる）
 Route::post('post/{post_id}', [PostsController::class, 'favo']);
 
-//お気に入りを外す処理
+//投稿をお気に入りを外す処理
 Route::post('postfavodelete/{post_id}', [PostsController::class, 'favodelete']);
 
 //更新画面表示
@@ -70,8 +70,14 @@ Route::post('/img/upload',[ImgController::class, 'upload']);
 //ユーザー一覧表示（男性用）
 Route::get('/users', [PostsController::class, 'userindex']);
 
+//相互フォローユーザーの一覧表示（男性用）
+Route::get('/users_follow', [PostsController::class, 'user_follow_index']);
+
 //ユーザー一覧表示（女性用）
 Route::get('/users_female', [PostsController::class, 'userindex_female']);
+
+//ユーザーをお気に入りにする処理 （URLの一部としてuser_idを入れている＝Bladeのボタンにターゲットユーザーのidが埋め込まれ、そのidが飛んでくる）
+Route::post('follow/{user_id}', [ChatsController::class, 'follow_user']);
 
 //hp投稿一覧表示
 Route::get('/hp', [HpsController::class, 'index']);

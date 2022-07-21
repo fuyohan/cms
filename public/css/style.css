@@ -78,7 +78,7 @@ body{
 
 .top-text2{
     text-align: center;
-    font-size: 40px;
+    font-size: 30px;
     color: rgb(248, 252, 255);
     margin-top: 40px;
 }
@@ -108,13 +108,13 @@ body{
 }
 
 .proposal_box_03{
-    margin-top: 120px;
+    margin-top: 250px;
     margin-left: 0px;
     text-decoration: none;
 }
 
 .proposal_box_04{
-    margin-top: -70px;
+    margin-top: 100px;
     margin-left:0px;
     text-decoration: none;
 }
@@ -135,9 +135,10 @@ body{
     background-image: url("/image/hatsuratsu.png");
     background-position: center;
     background-size: 120%;
-    margin-left:40px;
-    width:240px;
-    height: 230px;
+    margin: auto;
+    /*margin-left:40px;*/
+    width:340px;
+    height: 330px;
     /*background-color: white;*/
     display: flex;
     justify-content: center;
@@ -152,9 +153,10 @@ body{
     background-position: top;
     opacity: 0.9;
     background-size: 120%;
-    margin-left: 300px;
-    width:240px;
-    height: 230px;
+    margin: auto;
+    /*margin-left: 300px;*/
+    width:440px;
+    height: 420px;
    /*background-color: white;*/
     display: flex;
     justify-content: center;
@@ -234,7 +236,8 @@ transform:scale(1.2,1.2);
 
 .right_side{
     width: 50%;
-    background-image: url("/image/top.png");
+    /*background-image: url("/image/top.png");*/
+    background-color: #00CCCC;
     background-size: cover;
     height: 800px;
     position: relative;
@@ -290,7 +293,7 @@ transform:scale(1.2,1.2);
 }
 
 .proposal_06{
-    background-image: url("/image/female.png");
+    background-image: url("/image/男女ビジネスパートナー.jpg");
     background-position: top;
     opacity: 0.9;
     background-size: 120%;
@@ -1451,5 +1454,11 @@ color:#7fbfff;
     border-radius: 50%;
     border-bottom-color: gray;
     border-weight:bold;
+}
+
+.container_login{
+    margin: auto;
+    margin-top: 10%;
+    width: 80%;
 }
 

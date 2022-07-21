@@ -121,6 +121,22 @@
                               </textarea>
                             </div>
                         </div>
+                        
+                        <div class="row mb-3">
+                            <label for="purpose" class="col-md-4 col-form-label text-md-end">{{ __('プロフィール写真') }}</label>
+                            
+                            <div class="col-md-6">
+
+                            </div>
+                        </div>
+                        
+                        <form action="{{ url('/img/upload') }}" method="post" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                            <div class="form-group">
+                                <input id="fileUploader" type="file" name="img" accept='image/' enctype="multipart/form-data" multiple="multiple" required autofocus>
+                            </div>
+                            <!--<button type="submit" class="btn btn-primary">送信する</button>-->
+                        </form>
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">

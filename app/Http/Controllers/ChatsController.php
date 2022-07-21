@@ -63,6 +63,25 @@ class ChatsController extends Controller
         $chat->save(); 
         return redirect('/chats/'.$request->to_user_id);
     }
+    
+     //ユーザー同士のフォロー部分を記載したい。まだ途中・・・このままだとエラー
+    public function follow_user($user_id)
+    {
+        //ログイン中のユーザーを取得
+        $user = Auth::user();
+        
+        //お気に入りするUser (ユーザー一覧からお気に入りとして選ばれたユーザー)
+        $target_user = User::find($user_id);
+        
+        //リレーションの登録 パターン① (ターゲットユーザーに対するfollowerとして、ログインユーザーを登録する)
+        $target_user->followers()->attach($user);
+        
+        //リレーションの登録 パターン② (自分が起点。自分がターゲットにするfolloweeに、ターゲットユーザーを登録する操作。パターン①とどちらかで良い。同じ結果になる)
+        //$user->followees()->attach($target_user);
+        
+        return redirect('/users');
+        
+    }
 
     /**
      * Display the specified resource.

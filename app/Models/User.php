@@ -74,6 +74,16 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Chat','to_user_id');
     }
     
+    // ユーザーテーブルとのリレーション（自分をフォローしてくれる人を紐づける）、第二引数はテーブル名、第三引数はフォローされている人のID（主）、第四引数はその人をフォローしている人のID（従）：多対多のリレーションの一つの表し方
+    public function followers() {
+        return $this->belongsToMany('App\Models\User','follow','followee_id','follower_id');
+    }
+    
+    // ユーザーテーブルとのリレーション（自分をフォローしてくれる人を紐づける）、第二引数はテーブル名、第三引数はフォローしている人のID（主）、第四引数はその人によってフォローされている人のID（従）：多対多のリレーションの一つの表し方
+    public function followees() {
+        return $this->belongsToMany('App\Models\User','follow','follower_id','followee_id');
+    }
+    
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
