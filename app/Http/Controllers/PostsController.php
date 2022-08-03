@@ -18,7 +18,6 @@ class PostsController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-
 public function top_new()
     {
         $users = User::orderby('created_at', 'asc')->get();
@@ -33,71 +32,6 @@ public function top_female()
     }
 
 
-public function userindex()
-    {
-
-        $users = User::where("sex", "女性")->orderby('created_at', 'desc')->where(function ($query) {
-            // 検索機能
-            if ($search = request('search')) {
-                $query->where('intro', 'LIKE', "%{$search}%")->orWhere('skill','LIKE',"%{$search}%");
-            }
-            
-        })->withCount(['followers as follow_done'=>function ($query) { 
-            //userそれぞれに対して0か1の情報をとってくる（withcountのちょっと特別な使い方）。followersというリレーション（モデルの）を使う。ただし、followerの数をカウントしたい場合と被らないように、変数名にas follow_doneを加えている。
-            //片方だけを評価（＝自分がフォローしているかどうかを判定）
-            //もし相互フォローの判定をしたい場合は、followeeに対して逆の書き方をする。
-            $query->where('follower_id',Auth::id());
-        }])->get();
- 
-        return view('users',[
-            'users'=> $users
-        ]);
-        
-    }
-
-public function user_follow_index()
-    {
-
-        $users = User::where("sex", "女性")->orderby('created_at', 'desc')->where(function ($query) {
-            // 検索機能
-            if ($search = request('search')) {
-                $query->where('intro', 'LIKE', "%{$search}%")->orWhere('skill','LIKE',"%{$search}%");
-            }
-            
-        })->withCount(['followers as follow_done'=>function ($query) { 
-            //userそれぞれに対して0か1の情報をとってくる（withcountのちょっと特別な使い方）。followersというリレーション（モデルの）を使う。ただし、followerの数をカウントしたい場合と被らないように、変数名にas follow_doneを加えている。
-            //片方だけを評価（＝自分がフォローしているかどうかを判定）
-            //もし相互フォローの判定をしたい場合は、followeeに対して逆の書き方をする。
-            $query->where('follower_id',Auth::id()); //follower_idが自分であるかどうかの判定
-        
-        },'followees as followed_done'=>function ($query){
-            
-            $query->where('followee_id',Auth::id());//followee_idが自分であるかどうかの判定
-            
-        } ])->get();
- 
-        return view('users_follow',[
-            'users'=> $users
-        ]);
-        
-    }
-
-public function userindex_female()
-    {
-
-        $users_male = User::where("sex", "男性")->orderby('created_at', 'desc')->where(function ($query) {
-            // 検索機能
-            if ($search = request('search')) {
-                $query->where('intro', 'LIKE', "%{$search}%")->orWhere('skill','LIKE',"%{$search}%");
-            }
-            
-        })->get();
- 
-        return view('users_female',[
-            'users_male'=> $users_male
-        ]);
-        
-    }
 
 public function index()
     {

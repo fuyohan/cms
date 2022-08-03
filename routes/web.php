@@ -14,6 +14,7 @@ use App\Http\Controllers\HpsController;//追記
 use App\Http\Controllers\ScheduleController;//追記
 use App\Http\Controllers\ChatsController;//追記
 use App\Http\Controllers\ProductsController;//追記
+use App\Http\Controllers\ProfileController;//追記
 
 //TOPページ表示
 Route::get('/', [PostsController::class, 'top_new']);
@@ -60,21 +61,17 @@ Route::get('/chats/{user}',[ChatsController::class, 'chat']);
 //ちゃっと投稿
 Route::post('dochats',[ChatsController::class, 'store']);
 
-
 //プロフィール画像アップロード画面表示
 Route::get('/img', [ImgController::class, 'index']);
 
 //プロフィール画像アップロード処理
 Route::post('/img/upload',[ImgController::class, 'upload']);
 
-//ユーザー一覧表示（男性用）
-Route::get('/users', [PostsController::class, 'userindex']);
+//ユーザー一覧表示（男性用＆女性用を纏めたもの）
+Route::get('/users', [ChatsController::class, 'userindex']);
 
-//相互フォローユーザーの一覧表示（男性用）
-Route::get('/users_follow', [PostsController::class, 'user_follow_index']);
-
-//ユーザー一覧表示（女性用）
-Route::get('/users_female', [PostsController::class, 'userindex_female']);
+//相互フォローユーザーの一覧表示（男性用＆女性用を纏めたもの）
+Route::get('/users_follow', [ChatsController::class, 'user_follow_index']);
 
 //ユーザーをお気に入りにする処理 （URLの一部としてuser_idを入れている＝Bladeのボタンにターゲットユーザーのidが埋め込まれ、そのidが飛んでくる）
 Route::post('follow/{user_id}', [ChatsController::class, 'follow_user']);
@@ -107,5 +104,8 @@ Route::get('/schedule', [ScheduleController::class, 'input']);
 Route::post('/schedule/register', [ScheduleController::class, 'store']);
 
 Auth::routes();
+
+//プロフィール表示
+Route::get('/profile', [ProfileController::class, 'show']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

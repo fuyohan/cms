@@ -44,15 +44,6 @@
                                     <div>{{ $user->tag }}</div>
                                 </td>
                                 
-                                <!-- 興味ありボタンの表示 -->
-                                <td>
-                                    <form action="{{ url('follow/'.$user->id) }}" method="POST"> <!-- ターゲットユーザーのID情報がルーティング（follow/というURL）に送信される-->
-                                    	{{ csrf_field() }}
-                                    	<button type="submit" class="btn btn-danger">
-                                    	興味あり
-                                    	</button>
-                                    </form>
-                                </td>
 
 				                @if( Auth::check() )
                                 <!-- chatボタンの表示 -->

@@ -26,11 +26,7 @@
                   <div class="proposal_text">
                     
                     @if (Auth::check())
-                    @if (Auth::user()->sex=="男性")
                     <a href="./users">壁打ち<br>マッチング</a>
-                    @else
-                    <a href="./users_female">壁打ち<br>マッチング</a>
-                    @endif
                     @endif
                     
                   </div>

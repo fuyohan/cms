@@ -64,6 +64,24 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // 画像ファイル取得
+        $file = request()->img;
+        
+        if ( !empty($file) ) {
+            
+            // ファイルの拡張子取得
+            $ext = $file->guessExtension();
+    
+            //ファイル名を生成
+            $fileName = \Str::random(32).'.'.$ext;
+    
+            //public/uploadフォルダを作成
+            $target_path = public_path('/uploads/');
+    
+            //ファイルをpublic/uploadフォルダに移動
+            $file->move($target_path,$fileName);
+        }
+    
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -73,6 +91,7 @@ class RegisterController extends Controller
             'intro' => $data['intro'],
             'skill' => $data['skill'],
             'purpose' => $data['purpose'],
+            'img_url' => $fileName, //写真はデータそのものをテーブルに保存はしておらず、乱数生成されたファイル名を保存しているので、ここは$filenameになる。
         ]);
     }
 }

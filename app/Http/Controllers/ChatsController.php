@@ -64,6 +64,31 @@ class ChatsController extends Controller
         return redirect('/chats/'.$request->to_user_id);
     }
     
+    
+public function userindex()
+    {
+        $sex = Auth::user()->sex == "男性"?"女性":"男性";
+        //?より左が条件。もし自分が男性だったら、$sexに"女性"を代入する。:=それに該当しなかった場合、$sexに”男性”を代入する。
+
+        $users = User::where("sex", $sex)->orderby('created_at', 'desc')->where(function ($query) {
+            // 検索機能
+            if ($search = request('search')) {
+                $query->where('intro', 'LIKE', "%{$search}%")->orWhere('skill','LIKE',"%{$search}%");
+            }
+            
+        })->withCount(['followers as follow_done'=>function ($query) { 
+            //userそれぞれに対して0か1の情報をとってくる（withcountのちょっと特別な使い方）。followersというリレーション（モデルの）を使う。ただし、followerの数をカウントしたい場合と被らないように、変数名にas follow_doneを加えている。
+            //片方だけを評価（＝自分がフォローしているかどうかを判定）
+            //もし相互フォローの判定をしたい場合は、followeeに対して逆の書き方をする。
+            $query->where('follower_id',Auth::id());
+        }])->get();
+ 
+        return view('users',[
+            'users'=> $users
+        ]);
+        
+    }
+
      //ユーザー同士のフォロー部分を記載したい。まだ途中・・・このままだとエラー
     public function follow_user($user_id)
     {
@@ -80,6 +105,36 @@ class ChatsController extends Controller
         //$user->followees()->attach($target_user);
         
         return redirect('/users');
+        
+    }
+
+   public function user_follow_index()
+    {
+        
+        $sex = Auth::user()->sex == "男性"?"女性":"男性";
+        //?より左が条件。もし自分が男性だったら、$sexに"女性"を代入する。:=それに該当しなかった場合、$sexに”男性”を代入する。
+
+        $users = User::where("sex", $sex)->orderby('created_at', 'desc')->where(function ($query) {
+            // 検索機能
+            if ($search = request('search')) {
+                $query->where('intro', 'LIKE', "%{$search}%")->orWhere('skill','LIKE',"%{$search}%");
+            }
+            
+        })->withCount(['followers as follow_done'=>function ($query) { 
+            //userそれぞれに対して0か1の情報をとってくる（withcountのちょっと特別な使い方）。followersというリレーション（モデルの）を使う。ただし、followerの数をカウントしたい場合と被らないように、変数名にas follow_doneを加えている。
+            //片方だけを評価（＝自分がフォローしているかどうかを判定）
+            //もし相互フォローの判定をしたい場合は、followeeに対して逆の書き方をする。
+            $query->where('follower_id',Auth::id()); //follower_idが自分であるかどうかの判定
+        
+        },'followees as followed_done'=>function ($query){
+            
+            $query->where('followee_id',Auth::id());//followee_idが自分であるかどうかの判定
+            
+        } ])->get();
+ 
+        return view('users_follow',[
+            'users'=> $users
+        ]);
         
     }
 
