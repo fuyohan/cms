@@ -12,18 +12,26 @@
 </head>
 
   <!--Headerエリア--->
-
     
 <div class="search">
     <!--↓↓ 検索フォーム ↓↓-->
          <form id="form5" class="form-inline my-2 my-lg-0 ml-2">
               <input id="sbox5" type="search" class="form-control mr-sm-2" name="search"  value="{{request('search')}}" placeholder="どのようなウェルネスレシピを探していますか？" aria-label="検索..."> 
               <input id="sbtn5" type="submit" value="検索" class="btn btn-info">
+              
+                <label>
+                    <input type="radio" name="category" value="0" @if(!request('category')) checked @endif> 全て
+                </label>
+              
+                @foreach($categories as $category)
+                <label>
+                    <input type="radio" name="category" value="{{$category->id}}" @if($category->id==request('category')) checked @endif> {{$category->name }}
+                </label>
+                @endforeach
         </form>
 </div>
 
 <div class=fullscreen>
-    
     <!--↑↑ 検索フォーム ↑↑-->
     @if (count($posts) > 0)
                     <!-- 記事全体 -->
@@ -61,7 +69,7 @@
         	                            
          				                <!-- お気に入りボタン -->
                                         <div class="post_like">
-                                            <form action="{{ url('post/'.$post->id) }}" method="POST"> //post/というURL（ルーティング）にリクエストを送信している
+                                            <form action="{{ url('post/'.$post->id) }}" method="POST"> <!--post/というURL（ルーティング）にリクエストを送信している-->
                                                 {{ csrf_field() }}
                                                 <button type="submit" class="btn btn-danger">継続中👍</button>
                                             </form>

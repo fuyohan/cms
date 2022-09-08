@@ -14,11 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->string('post_desc_title');  //カラム追
-            $table->string('post_fre_title');  //カラム追加
-            $table->string('post_fre_what');  //カラム追加
-            $table->string('post_time_title');  //カラム追加
-            $table->string('post_time_what');  //カラム追加
+            $table->string('post_desc_title')->nullable();//追記！！！;  //カラム追
+            $table->string('post_fre_title')->nullable();//追記！！！;  //カラム追加
+            $table->string('post_fre_what')->nullable();//追記！！！;  //カラム追加
+            $table->string('post_time_title')->nullable();//追記！！！;  //カラム追加
+            $table->string('post_time_what')->nullable();//追記！！！;  //カラム追加
             $table->string('video_url')->nullable();//追記！！！
         });
     }

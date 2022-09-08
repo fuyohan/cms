@@ -15,6 +15,13 @@ class Post extends Model
     // Userテーブルとの多対多リレーション
      public function favo_user() {
         return $this->belongsToMany('App\Models\User');
+    
+    }
+    
+    // Categoriesテーブルとの多対多リレーション
+     public function categories() {
+        return $this->belongsToMany('App\Models\Category');    
+    
     }
     use HasFactory;
 }

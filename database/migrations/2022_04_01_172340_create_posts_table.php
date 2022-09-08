@@ -15,10 +15,10 @@ return new class extends Migration
     {
             Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('post_title');
-            $table->string('post_desc');
+            $table->string('post_title')->nullable();//追記！！！
+            $table->string('post_desc')->nullable();//追記！！！
             $table->string('img_url')->nullable();//追記！！！
-	        $table->integer('user_id');
+	        $table->integer('user_id')->nullable();//追記！！！
             $table->timestamps();
         });
     }

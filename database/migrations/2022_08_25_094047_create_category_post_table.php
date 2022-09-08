@@ -13,8 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-             $table->string('tag')->nullable();  //カラム追加
+        Schema::create('category_post', function (Blueprint $table) {
+            $table->integer("category_id");
+            $table->integer("post_id");
+            $table->timestamps();
         });
     }
 
@@ -25,8 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('category_post');
     }
 };

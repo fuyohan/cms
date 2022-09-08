@@ -14,11 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('pro');  //カラム追加
-            $table->string('sex');  //カラム追加
-            $table->string('intro');  //カラム追加
-            $table->string('skill');  //カラム追加
-            $table->string('purpose');  //カラム追加
+            $table->integer('pro')->nullable();  //カラム追加
+            $table->string('sex')->nullable();  //カラム追加
+            $table->string('intro')->nullable();  //カラム追加
+            $table->string('skill')->nullable();  //カラム追加
+            $table->string('purpose')->nullable();  //カラム追加
         });
     }
 

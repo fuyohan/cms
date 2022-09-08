@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->string('hpmenu');  //カラム追加
+            $table->string('hpmenu') ->nullable();//追記！！！
         });
     }
 

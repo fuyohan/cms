@@ -94,6 +94,17 @@
             </div>
             
             <div class="form-group">
+                どのカテゴリーですか？
+                <div class="col-sm-6">
+                    <select name="categories" multiple> <!--複数選択ができるように-->
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group">
                 このウェルネス活動を表す写真のアップロードにご協力ください。<br>
                 <input id="fileUploader" type="file" name="img" accept='image/' enctype="multipart/form-data" multiple="multiple" required autofocus>
             </div>

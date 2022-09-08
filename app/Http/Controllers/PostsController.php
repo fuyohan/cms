@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 use App\Models\Post; //この行を上に追加
 use App\Models\User;//この行を上に追加
 use App\Models\Comment;//この行を上に追加
+use App\Models\Category;//この行を上に追加
 use Auth;//この行を上に追加
 use Validator;//この行を上に追加
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Builder;
 
 class PostsController extends Controller
 {
@@ -36,16 +38,26 @@ public function top_female()
 public function index()
     {
         
-        $posts = Post::orderBy('created_at', 'desc')->where(function ($query) {
-            
-            // 検索機能
-            if ($search = request('search')) {
-                $query->where('post_title', 'LIKE', "%{$search}%")->orWhere('post_desc','LIKE',"%{$search}%");
-            }
-            
-        })->withCount("favo_user")->get(); //この記事に対してお気に入りしているユーザーの数をカウントする。get メソッドの前にwithcountを挟む。
+        $query = Post::orderBy('created_at', 'desc');
         
+        // 検索機能
+        if ($search = request('search')) {
+            $query = $query->where(function (Builder $sub_query) use($search) {
+                $sub_query->where('post_title', 'LIKE', "%{$search}%")->orWhere('post_desc','LIKE',"%{$search}%");
+            });
+        }
+        
+        if ($category = request('category')) { //このcategoryはBladeでのnameがcategoryとなっているradioで選択されたタブのvalueをrequest関数が返す。→それを$categoryに代入。
+            $query = $query->whereHas('categories', function (Builder  $sub_query) use($category)  { //Categoriesがぶら下がっているかどうかの判定(ここでリレーションの判定)    。
+                $sub_query->where('id', $category); //完全一致検索だから%は要らない。文字列
+            });
+        }
+        
+        $posts = $query->withCount("favo_user")->get(); //この記事に対してお気に入りしているユーザーの数をカウントする。get メソッドの前にwithcountを挟む。
+
         $users = User::orderby('created_at', 'asc')->get();
+        $categories = Category::get();
+
         
         if (Auth::check()) {
              //ログインユーザーのお気に入りを取得
@@ -54,6 +66,7 @@ public function index()
              'posts'=> $posts,
              'favo_posts'=>$favo_posts,
              'users'=> $users,
+             'categories'=>$categories
              ]);
              
         }else{
@@ -61,6 +74,7 @@ public function index()
             return view('posts',[
             'posts'=> $posts,
             'users'=> $users,
+            'categories'=>$categories
             ]);
             
         }
@@ -100,7 +114,10 @@ public function index()
     
     public function input()
     {
-        return view('input');
+        $categories = Category::get();
+        return view('input',[
+            'categories'=>$categories
+            ]);
     }
 
     /**
@@ -157,7 +174,7 @@ public function index()
             $file->move($target_path,$fileName);
         }
         
-        $post->post_title = $request->post_title;
+        $post->post_title = $request->post_title; 
         $post->post_desc_title = $request->post_desc_title;
         $post->post_desc = $request->post_desc;
         $post->post_fre_what = $request->post_fre_what;
@@ -165,7 +182,8 @@ public function index()
         $post->video_url = $request-> video_url;
         $post->user_id = Auth::id();//ここでログインしているユーザidを登録しています
         $post->save();
-        
+        $post->categories()->sync($request->categories); //saveの後にかく（sync = 同期をかける、カテゴリーとポストの接続テーブルに関するsaveも兼ねている。何も選ばなければ接続をきる処理になる）
+        //
         return redirect('/posts');
     }
 
