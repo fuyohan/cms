@@ -7,7 +7,9 @@
                 <div class="card-header">{{ __('マイプロフィール') }}</div>
 
                 <div class="card-body">
-                   
+                   <form method="POST" action="{{ route('profile') }}" enctype="multipart/form-data">
+                       @csrf
+                       
                         <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('名前') }}</label>
 
@@ -87,7 +89,7 @@
                         </div>
                         
                         <div class="form-group">
-                            <input id="fileUploader" type="file" name="img" accept='image/' required autofocus>
+                            <input id="fileUploader" type="file" name="img" accept='image/' autofocus>
                         </div>
                         <!--<button type="submit" class="btn btn-primary">送信する</button>-->
 
@@ -98,7 +100,7 @@
                                 </button>
                             </div>
                         </div>
-
+                    </form>
                 </div>
             </div>
         </div>

@@ -75,9 +75,34 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+    
+        $user=Auth::user();
+        
+        // 画像ファイル取得
+        $file = $request->img;
+        if ( !empty($file) ) {
+            
+            // ファイルの拡張子取得
+            $ext = $file->guessExtension();
+    
+            //ファイル名を生成
+            $fileName = \Str::random(32).'.'.$ext;
+    
+            //public/uploadフォルダを作成
+            $target_path = public_path('/uploads/');
+    
+            //ファイルをpublic/uploadフォルダに移動
+            $file->move($target_path,$fileName);
+            $user->img_url=$fileName;
+        }
+        
+        $user->name= $request->name;
+        $user->sex= $request->sex;
+        $user->save();
+        
+        return redirect('/profile');
     }
 
     /**

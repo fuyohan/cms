@@ -108,4 +108,7 @@ Auth::routes();
 //プロフィール表示
 Route::get('/profile', [ProfileController::class, 'show']);
 
+//プロフィール更新
+Route::post('/profile', [ProfileController::class, 'update'])->name('profile');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
