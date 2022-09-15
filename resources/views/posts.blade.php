@@ -12,11 +12,11 @@
 </head>
 
   <!--Headerエリア--->
-    
+  
+<!--↓↓ 検索フォーム ↓↓-->
 <div class="search">
-    <!--↓↓ 検索フォーム ↓↓-->
          <form id="form5" class="form-inline my-2 my-lg-0 ml-2">
-              <input id="sbox5" type="search" class="form-control mr-sm-2" name="search"  value="{{request('search')}}" placeholder="どのようなウェルネスレシピを探していますか？" aria-label="検索..."> 
+              <input id="sbox5" type="search" class="form-control mr-sm-2" name="search"  value="{{request('search')}}" placeholder="仲間の健康宣言を探して見ましょう" aria-label="検索..."> 
               <input id="sbtn5" type="submit" value="検索" class="btn btn-info">
               
                 <label>
@@ -33,6 +33,8 @@
 
 <div class=fullscreen>
     <!--↑↑ 検索フォーム ↑↑-->
+    <div class="post_top">★ 仲間の健康宣言一覧 ★ </div>
+    
     @if (count($posts) > 0)
                     <!-- 記事全体 -->
                     <div class="post_all">
@@ -42,9 +44,10 @@
                          
 				                <!-- 投稿写真 -->
 				                <div class="post_img">
-				                @if($post->img_url)
+				                <!--@if($post->img_url)
 				                <img src="/uploads/{{ $post->img_url }}" style="max-width:100%; max-height:200px;">
-				                @endif
+				                @endif-->
+				                     <img src="/uploads/{{$post->user->img_url}}">
 				                </div>
 				                
 				                <div Class="post_under">
@@ -55,7 +58,7 @@
     				                
     				                <!-- 投稿者名の表示 -->
                                     <div class="table-text">
-                                        <div>{{ $post->user->name }}</div>
+                                        <div>{{ $post->user->name }} さん</div>
                                     </div>
                                     
                                     <div class="post_button">
@@ -63,7 +66,7 @@
                                         <div class="post_detail">
                                             <form action="{{ url('postsdetail/'.$post->id) }}" method="GET"> 
                                             {{ csrf_field() }}
-                                            <button type="submit" class="btn btn-primary">詳細</button>
+                                            <button type="submit" class="btn btn-primary">宣言詳細</button>
         	                                </form>
         	                            </div>
         	                            
@@ -71,7 +74,7 @@
                                         <div class="post_like">
                                             <form action="{{ url('post/'.$post->id) }}" method="POST"> <!--post/というURL（ルーティング）にリクエストを送信している-->
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger">継続中👍</button>
+                                                <button type="submit" class="btn btn-danger">頑張れー👍</button>
                                             </form>
                                             {{$post->favo_user_count}}
                                         </div>

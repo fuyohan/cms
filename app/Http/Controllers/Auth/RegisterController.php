@@ -86,12 +86,13 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'pro' => $data['pro'],
+            //'pro' => $data['pro'],
             'sex' => $data['sex'],
-            'intro' => $data['intro'],
-            'skill' => $data['skill'],
-            'purpose' => $data['purpose'],
+            //'intro' => $data['intro'],
+            //'skill' => $data['skill'],
+            //'purpose' => $data['purpose'],
             'img_url' => $fileName, //写真はデータそのものをテーブルに保存はしておらず、乱数生成されたファイル名を保存しているので、ここは$filenameになる。
         ]);
+        
     }
 }

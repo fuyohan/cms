@@ -19,7 +19,7 @@
                 <table class="table table-striped task-table">
                     <!-- テーブルヘッダ -->
                     <thead>
-                        <th>あなたにおすすめの壁打ち相手一覧</th>
+                        <th>あなたにおすすめの繋がり一覧</th>
                         <th>&nbsp;</th>
                     </thead>
                     <!-- テーブル本体 -->

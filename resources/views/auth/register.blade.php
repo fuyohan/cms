@@ -11,7 +11,7 @@
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('名前') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('ニックネーム') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -61,11 +61,11 @@
                         </div>
                         
                         <div class="row mb-3">
-                            <label for="pro" class="col-md-4 col-form-label text-md-end">{{ __('Pro会員登録の場合は「1」と入力ください') }}</label>
+                            <!--<label for="pro" class="col-md-4 col-form-label text-md-end">{{ __('Pro会員登録の場合は「1」と入力ください') }}</label>
 
                             <div class="col-md-6">
                                <input type="text" name="pro" class="form-control">
-                            </div>
+                            </div>-->
                             
                         </div>
                         
@@ -79,22 +79,17 @@
                             
                         </div>
                         
-                        <div class="row mb-3">
+                        <!--<div class="row mb-3">
                             <label for="intro" class="col-md-4 col-form-label text-md-end">{{ __('自己紹介を記載ください') }}</label>
                             
                             <div class="col-md-6">
                                <textarea  class="form-control" type="text" name="intro" rows="8" placeholder="自己紹介を記載ください">
-                               ＜学歴・略歴＞
-                               
-                               ＜自己紹介＞
-                               
-                               ＜興味・関心＞
                               </textarea>
                             </div>
                            
-                        </div>
+                        </div>-->
                         
-                        <div class="row mb-3">
+                        <!--<div class="row mb-3">
                             <label for="skill" class="col-md-4 col-form-label text-md-end">{{ __('壁打ちを受けたいテーマ') }}</label>
                             
                             <div class="col-md-6">
@@ -106,9 +101,9 @@
                                ＜共感者として＞
                               </textarea>
                             </div>
-                        </div>
+                        </div>-->
                         
-                        <div class="row mb-3">
+                        <!--<div class="row mb-3">
                             <label for="purpose" class="col-md-4 col-form-label text-md-end">{{ __('壁打ちしたいテーマ') }}</label>
                             
                             <div class="col-md-6">
@@ -120,14 +115,10 @@
                                ＜共感者として＞
                               </textarea>
                             </div>
-                        </div>
+                        </div>-->
                         
                         <div class="row mb-3">
                             <label for="purpose" class="col-md-4 col-form-label text-md-end">{{ __('プロフィール写真') }}</label>
-                            
-                            <div class="col-md-6">
-
-                            </div>
                         </div>
                         
                         <div class="form-group">

@@ -262,6 +262,7 @@ transform:scale(1.2,1.2);
 
 .proposal_box{
     display: flex;
+    margin-top: 20px;
 }
 
 .proposal_box_05{
@@ -277,9 +278,9 @@ transform:scale(1.2,1.2);
 }
 
 .proposal_05{
-    background-image: url("/image/hatsuratsu.png");
-    background-position: center;
-    background-size: 120%;
+    background-image: url("/image/声援2.jpg");
+    background-position: bottom;
+    background-size: 160%;
     margin:auto;
     width:420px;
     height: 400px;
@@ -293,10 +294,10 @@ transform:scale(1.2,1.2);
 }
 
 .proposal_06{
-    background-image: url("/image/男女ビジネスパートナー.jpg");
-    background-position: top;
+    background-image: url("/image/hatsuratsu.png");
+    background-position:  top;
     opacity: 0.9;
-    background-size: 120%;
+    background-size: 140%;
     margin:auto;
     width:420px;
     height: 400px;
@@ -321,14 +322,14 @@ transform:scale(1.2,1.2);
 
 .proposal_text{
     color: aliceblue;
-    font-size: 35px;
+    font-size: 50px;
     font-weight: bold;
     background-color: white;
     opacity: 0.8;
 }
 
 .proposal_text a{
-    font-size: 30px;
+    font-size: 50px;
     font-weight: bold;
     text-decoration:none;
     color: #011412;
@@ -862,7 +863,7 @@ margin-top: 30px;
 .search{
     margin-left:50px;
     margin-right:50px;
-    margin-bottom:100px;
+    margin-bottom:50px;
     max-width: 50%;
 }
 
@@ -889,7 +890,7 @@ margin-top: 30px;
 }
 
 .post_img img{
-    border-radius: 10px 10px 0px 0px; /* 左上、右上、右下、左下 */
+    border-radius: 50px 50px 0px 0px; /* 左上、右上、右下、左下 */
     width: 100%;
     height: 150px;
     object-fit: cover;
@@ -899,13 +900,15 @@ margin-top: 30px;
     background-color:#f5fffa;
     border :1px solid #dcdcdc;
     border-top :0px solid white; 
-    border-radius: 0px 0px 10px 10px; /* 左上、右上、右下、左下 */
+    border-radius: 0px 0px 50px 50px; /* 左上、右上、右下、左下 */
     height:180px;
 }
 
 .post_title {
     padding-top:10px; 
     font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .post_button{
@@ -1461,4 +1464,30 @@ color:#7fbfff;
     margin-top: 10%;
     width: 80%;
 }
+
+.input-top{
+    text-align: center;
+    font-size:40px;
+    color: black;
+    margin-top: 40px;
+}
+
+
+.input-top2{
+    text-align: center;
+    font-size:20px;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.post_top{
+    text-align: center;
+    font-size:30px;
+    color: black;
+    margin-top: 0px;
+    margin-bottom: 40px;
+}
+
 

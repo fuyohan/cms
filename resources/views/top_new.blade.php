@@ -12,23 +12,19 @@
   <main>
     <div class="full_screen_new">
       
-        <div class="top-text2">最高の状態を共有・発掘しよう</div>
+        <div class="top-text2">仲間の健康活動を応援しよう！！</div>
         
         <div class="proposal_box">
               <div class="proposal_box_05">
                 <div class="proposal_05">
-                  <div class="proposal_text"><a href="./posts">はつらつ<br>レシピ</a></div>
+                  <div class="proposal_text"><a href="./posts">応援する</a></div>
                 </div>
               </div>
               
               <div class="proposal_box_06">
                 <div class="proposal_06">
                   <div class="proposal_text">
-                    
-                    @if (Auth::check())
-                    <a href="./users">壁打ち<br>マッチング</a>
-                    @endif
-                    
+                    <a href="./users">繋がる</a>
                   </div>
                 </div>
               </div>

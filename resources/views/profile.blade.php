@@ -47,7 +47,7 @@
                             
                         </div>
                         
-                        <div class="row mb-3">
+                        <!--<div class="row mb-3">
                             <label for="intro" class="col-md-4 col-form-label text-md-end">{{ __('自己紹介を記載ください') }}</label>
                             
                             <div class="col-md-6">
@@ -56,9 +56,9 @@
                               </textarea>
                             </div>
                            
-                        </div>
+                        </div>-->
                         
-                        <div class="row mb-3">
+                        <!--<div class="row mb-3">
                             <label for="skill" class="col-md-4 col-form-label text-md-end">{{ __('壁打ちを受けたいテーマ') }}</label>
                             
                             <div class="col-md-6">
@@ -66,9 +66,9 @@
                                {{$user->skill}} 
                                </textarea>
                             </div>
-                        </div>
+                        </div>-->
                         
-                        <div class="row mb-3">
+                        <!--<div class="row mb-3">
                             <label for="purpose" class="col-md-4 col-form-label text-md-end">{{ __('壁打ちしたいテーマ') }}</label>
                             
                             <div class="col-md-6">
@@ -76,7 +76,7 @@
                                {{$user->purpose}}
                                </textarea>
                             </div>
-                        </div>
+                        </div>-->
                         
                         <div class="row mb-3">
                             <label for="purpose" class="col-md-4 col-form-label text-md-end">{{ __('プロフィール写真') }}</label>

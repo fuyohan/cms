@@ -5,22 +5,23 @@
 <div class="input-full_screen">
     <div class="input-box">
         <div class="card-title">
-        「はつらつ」はウェルネスを高める活動・日常のレシピ化を目指しています。<br>
+            
+        <div class="input-top">★ 私の健康宣言★ </div>
+        <div class="input-top2">これからチャレンジしたい健康活動を宣言してください </div>
         
-        身体・精神ともに良いコンディションを保つ為に実践した（している）ことを教えてください<br>
-        
-        （運動・食事への気遣い・趣味への没頭・家族のケア・自己啓発、等）<br><br>
         </div>
         <!-- バリデーションエラーの表示に使用-->
     	@include('common.errors')
         <!-- バリデーションエラーの表示に使用-->
         <!-- 投稿フォーム -->
         @if( Auth::check() )
+        
+        <div class="input-form">
         <form action="{{ url('posts') }}" method="POST" class="form-horizontal" enctype="multipart/form-data">
             {{ csrf_field() }}
             <!-- 投稿のタイトル -->
             <div class="form-group">
-                タイトル
+                チャレンジの内容を一言（15字以内）で教えてください。
                 <div class="col-sm-6">
                     <input type="text" name="post_title" class="form-control">
                 </div>
@@ -28,7 +29,7 @@
             
             <!-- 投稿本文のタイトル -->
             <div class="form-group">
-                実践した（している）ことを一言でいうと
+                チャレンジの背景を簡単に教えてください。
                 <div class="col-sm-6">
                     <input type="text" name="post_desc_title" class="form-control">
                 </div>
@@ -36,27 +37,16 @@
             
             <!-- 投稿の本文 -->
             <div class="form-group">
-                もう少し詳しく教えてください。
+                チャレンジの内容を教えてください。
                 <div class="col-sm-6">
-                    <textarea  class="form-control" type="text" name="post_desc" rows="5" placeholder="実際に行動している内容を入力してください">
-                    実際に行動している内容を入力してください
-                    
-                    例) 
-                    ・40代に入って、テニスを始めました 
-                    
-                    ・●●区のスクールに入り、コーチに教わりながらやっています。
-                    
-                    ・スクールはこちらになります。
-                    https://greenhills.jp/
-                    
-                    ・スクール
-                    
+                    <textarea  class="form-control" type="text" name="post_desc" rows="5" placeholder="">
+
                     </textarea>
                 </div>
             </div>
             
             <!-- 頻度 -->
-            <div class="form-group">
+            <!--<div class="form-group">
                 週に何回やっていますか？
                 <div class="col-sm-6">
                     <select name="post_fre_what">
@@ -91,10 +81,17 @@
                         <option value="14">14時間</option>
                     </select>
                 </div>
+            </div>-->
+            
+             <div class="form-group">
+                チャレンジ期間を教えてください。
+                <div class="col-sm-6">
+                    <input type="text" name="video_url" class="form-control">
+                </div>
             </div>
             
             <div class="form-group">
-                どのカテゴリーですか？
+                どのカテゴリーの宣言になりますか？
                 <div class="col-sm-6">
                     <select name="categories" multiple> <!--複数選択ができるように-->
                     @foreach($categories as $category)
@@ -104,7 +101,7 @@
                 </div>
             </div>
             
-            <div class="form-group">
+            <!--<div class="form-group">
                 このウェルネス活動を表す写真のアップロードにご協力ください。<br>
                 <input id="fileUploader" type="file" name="img" accept='image/' enctype="multipart/form-data" multiple="multiple" required autofocus>
             </div>
@@ -114,24 +111,20 @@
                 <div class="col-sm-6">
                     <input type="text" name="video_url" class="form-control">
                 </div>
-            </div>
+            </div>-->
             
-            <div class="form-group">
-                使用しているサービスがあれば、リンクを貼り付けてください。
-                <div class="col-sm-6">
-                    <input type="text" name="video_url" class="form-control">
-                </div>
-            </div>
+
 
             <!--　登録ボタン -->
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-6">
                     <button type="submit" class="btn btn-primary">
-                        レシピ化
+                        宣言する
                     </button>
                 </div>
             </div>
         </form>
+        </div>
         @endif
     </div>
 </div>
