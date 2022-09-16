@@ -19,7 +19,7 @@
               <input id="sbox5" type="search" class="form-control mr-sm-2" name="search"  value="{{request('search')}}" placeholder="仲間の健康宣言を探して見ましょう" aria-label="検索..."> 
               <input id="sbtn5" type="submit" value="検索" class="btn btn-info">
               
-                <label>
+                <!--<label>
                     <input type="radio" name="category" value="0" @if(!request('category')) checked @endif> 全て
                 </label>
               
@@ -27,7 +27,7 @@
                 <label>
                     <input type="radio" name="category" value="{{$category->id}}" @if($category->id==request('category')) checked @endif> {{$category->name }}
                 </label>
-                @endforeach
+                @endforeach-->
         </form>
 </div>
 

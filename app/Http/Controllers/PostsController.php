@@ -11,6 +11,8 @@ use Auth;//この行を上に追加
 use Validator;//この行を上に追加
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\PostComplete;
 
 class PostsController extends Controller
 {
@@ -183,7 +185,12 @@ public function index()
         $post->user_id = Auth::id();//ここでログインしているユーザidを登録しています
         $post->save();
         $post->categories()->sync($request->categories); //saveの後にかく（sync = 同期をかける、カテゴリーとポストの接続テーブルに関するsaveも兼ねている。何も選ばなければ接続をきる処理になる）
-        //
+        
+        $users = User::all();
+        foreach ($users as $recipient) {
+           Mail::to($recipient)->send(new PostComplete($post));
+        }
+        
         return redirect('/posts');
     }
 

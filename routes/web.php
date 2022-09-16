@@ -16,6 +16,12 @@ use App\Http\Controllers\ChatsController;//追記
 use App\Http\Controllers\ProductsController;//追記
 use App\Http\Controllers\ProfileController;//追記
 
+Route::group(['middleware' => 'auth'], function () {
+    //投稿フォーム表示
+    Route::get('/input', [PostsController::class, 'input']);
+    
+});
+
 //TOPページ表示
 Route::get('/', [PostsController::class, 'top_new']);
 
@@ -27,9 +33,6 @@ Route::get('/posts', [PostsController::class, 'index']);
 
 //hp向上専用投稿一覧表示
 Route::get('/hp_posts', [PostsController::class, 'hpindex']);
-
-//投稿フォーム表示
-Route::get('/input', [PostsController::class, 'input']);
 
 //投稿処理
 Route::post('posts', [PostsController::class, 'store']);
@@ -104,6 +107,8 @@ Route::get('/schedule', [ScheduleController::class, 'input']);
 Route::post('/schedule/register', [ScheduleController::class, 'store']);
 
 Auth::routes();
+
+
 
 //プロフィール表示
 Route::get('/profile', [ProfileController::class, 'show']);

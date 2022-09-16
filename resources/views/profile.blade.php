@@ -92,6 +92,13 @@
                             <input id="fileUploader" type="file" name="img" accept='image/' autofocus>
                         </div>
                         <!--<button type="submit" class="btn btn-primary">送信する</button>-->
+                        
+                        <!-- 投稿写真 -->
+				        <div class="profile_img">
+				        @if($user->img_url)
+				          <img src="/uploads/{{$user->img_url}}">
+				        @endif
+				        </div>
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
