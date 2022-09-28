@@ -28,14 +28,18 @@
                 <!--<a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'ハツ☆Ratsu') }}
                 </a>-->
-                <!--<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <!--<span class="navbar-toggler-icon"></span>
-                </button>-->
+                <h1 class="li">
+                    <a href="/"><img src="/image/logo.png" width=150px, height=100%></a>
+                </h1>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+                    <!--<ul class="navbar-nav me-auto">
                         <div class="top">
                           <div class="top-under">
                             <h1 class="li">
@@ -43,7 +47,7 @@
                             </h1>
                           </div>
                         </div>
-                    </ul>
+                    </ul>-->
                     
                     <ul class=nav>
                        <li class="li"><a href="./input"><!--<img src="/image/mymenu.png" width=120px, height=80%>-->宣言する</a></li>
