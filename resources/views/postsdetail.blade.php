@@ -8,7 +8,7 @@
             
             <div class="post_01">
                 @if($post->img_url)
-				<img src="/uploads/{{ $post->user->img_url }}" style="max-width:100%; max-height:500px;">
+				<img src="/uploads/{{ $post->img_url }}" style="max-width:100%; max-height:500px;">
 				@endif
             </div>
             
@@ -18,16 +18,16 @@
             </div>
            
             <div class="post_02">
-              <div class="post_title_for_detail">宣言の理由</div>
+              <div class="post_title_for_detail">レシピ名</div>
               <div class="post_02_desc">{!!nl2br(e($post->post_desc_title))!!}</div>
             </div>
             
             <div class="post_02">
-              <div class="post_title_for_detail">私の健康宣言</div>
+              <div class="post_title_for_detail">レシピ概要</div>
               <div class="post_02_desc">{!!nl2br(e($post->post_desc))!!}</div>
             </div>
             
-            <!--<div class="post_02">
+            <div class="post_02">
               <div class="post_title_for_detail">週に何回やっている？</div>
               <div class="post_02_desc">{!!nl2br(e($post->post_fre_what))!!} 回</div>
             </div>
@@ -35,7 +35,7 @@
             <div class="post_02">
               <div class="post_title_for_detail">毎回何時間かかる？</div>
               <div class="post_02_desc">{!!nl2br(e($post->post_time_what))!!} 時間</div>
-            </div>-->
+            </div>
             
             <!--<div class="post_03">
                 <div class="post_title_for_detail">チャレンジ期間</div>
@@ -55,14 +55,12 @@
             </div>
             
         </div>
-        
-  
     
         <!--右エリア -->
         <div class="post_right_side">
             
             <div class="post_04">
-                <div class="post_04_title"><h1>{{$post->post_title}}</h1></div>
+                <!--<div class="post_04_title"><h1>{{$post->post_title}}</h1></div>-->
                 
                 <div class="post_04_favo">応援中の仲間：{{$post->favo_user_count}} 人</div>
                 

@@ -33,7 +33,7 @@
 
 <div class=fullscreen>
     <!--↑↑ 検索フォーム ↑↑-->
-    <div class="post_top">★ 仲間の健康宣言一覧 ★ </div>
+    <div class="post_top">仲間の健康レシピ一覧 </div>
     
     @if (count($posts) > 0)
                     <!-- 記事全体 -->
@@ -44,10 +44,10 @@
                          
 				                <!-- 投稿写真 -->
 				                <div class="post_img">
-				                <!--@if($post->img_url)
+				                @if($post->img_url)
 				                <img src="/uploads/{{ $post->img_url }}" style="max-width:100%; max-height:200px;">
-				                @endif-->
-				                     <img src="/uploads/{{$post->user->img_url}}">
+				                @endif
+				                <!--<img src="/uploads/{{$post->user->img_url}}">-->
 				                </div>
 				                
 				                <div Class="post_under">
@@ -66,7 +66,7 @@
                                         <div class="post_detail">
                                             <form action="{{ url('postsdetail/'.$post->id) }}" method="GET"> 
                                             {{ csrf_field() }}
-                                            <button type="submit" class="btn btn-primary">宣言詳細</button>
+                                            <button type="submit" class="btn btn-primary">詳細</button>
         	                                </form>
         	                            </div>
         	                            
@@ -74,7 +74,7 @@
                                         <div class="post_like">
                                             <form action="{{ url('post/'.$post->id) }}" method="POST"> <!--post/というURL（ルーティング）にリクエストを送信している-->
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger">頑張れー👍</button>
+                                                <button type="submit" class="btn btn-danger">いいね👍</button>
                                             </form>
                                             {{$post->favo_user_count}}
                                         </div>

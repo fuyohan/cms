@@ -6,8 +6,8 @@
     <div class="input-box">
         <div class="card-title">
             
-        <div class="input-top">★ 私の健康宣言★ </div>
-        <div class="input-top2">これからチャレンジしたい健康活動を宣言してください </div>
+        <div class="input-top">私の健康レシピ </div>
+        <div class="input-top2">ヒアリングしたユーザーの情報をレシピ化する </div>
         
         </div>
         <!-- バリデーションエラーの表示に使用-->
@@ -21,7 +21,7 @@
             {{ csrf_field() }}
             <!-- 投稿のタイトル -->
             <div class="form-group">
-                チャレンジの内容を一言（15字以内）で教えてください。
+                レシピ化の内容を一言（15字以内）で記載。
                 <div class="col-sm-6">
                     <input type="text" name="post_title" class="form-control">
                 </div>
@@ -29,7 +29,7 @@
             
             <!-- 投稿本文のタイトル -->
             <div class="form-group">
-                チャレンジの背景を簡単に教えてください。
+                レシピ化の詳細を記載。
                 <div class="col-sm-6">
                     <input type="text" name="post_desc_title" class="form-control">
                 </div>
@@ -46,7 +46,7 @@
             </div>
             
             <!-- 頻度 -->
-            <!--<div class="form-group">
+            <div class="form-group">
                 週に何回やっていますか？
                 <div class="col-sm-6">
                     <select name="post_fre_what">
@@ -81,14 +81,14 @@
                         <option value="14">14時間</option>
                     </select>
                 </div>
-            </div>-->
+            </div>
             
-             <div class="form-group">
+            <!--<div class="form-group">
                 チャレンジ期間を教えてください。
                 <div class="col-sm-6">
                     <input type="text" name="video_url" class="form-control">
                 </div>
-            </div>
+            </div>-->
             
             <div class="form-group">
                 どのカテゴリーの宣言になりますか？
@@ -101,12 +101,12 @@
                 </div>
             </div>
             
-            <!--<div class="form-group">
+            <div class="form-group">
                 このウェルネス活動を表す写真のアップロードにご協力ください。<br>
                 <input id="fileUploader" type="file" name="img" accept='image/' enctype="multipart/form-data" multiple="multiple" required autofocus>
             </div>
 
-            <div class="form-group">
+            <!--<div class="form-group">
                 参考になるYoutube動画があれば、埋め込みリンクを貼り付けてください。
                 <div class="col-sm-6">
                     <input type="text" name="video_url" class="form-control">
@@ -119,7 +119,7 @@
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-6">
                     <button type="submit" class="btn btn-primary">
-                        宣言する
+                        レシピ化する
                     </button>
                 </div>
             </div>
