@@ -19,7 +19,6 @@ use App\Http\Controllers\ProfileController;//追記
 Route::group(['middleware' => 'auth'], function () {
     //投稿フォーム表示
     Route::get('/input', [PostsController::class, 'input']);
-    
 });
 
 //TOPページ表示
@@ -107,7 +106,6 @@ Route::get('/schedule', [ScheduleController::class, 'input']);
 Route::post('/schedule/register', [ScheduleController::class, 'store']);
 
 Auth::routes();
-
 
 
 //プロフィール表示

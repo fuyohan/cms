@@ -19,7 +19,7 @@
                 <table class="table table-striped task-table">
                     <!-- テーブルヘッダ -->
                     <thead>
-                        <th>あなたにおすすめの繋がり一覧</th>
+                        <th>課題ホルダー一覧</th>
                         <th>&nbsp;</th>
                     </thead>
                     <!-- テーブル本体 -->

@@ -12,19 +12,19 @@
   <main>
     <div class="full_screen_new">
       
-        <div class="top-text2">仲間の健康活動を応援しよう！！</div>
+        <div class="top-text2">企業の新規事業開発における</br>「課題発掘」と「シーズ発掘」を支援します！</div>
         
         <div class="proposal_box">
               <div class="proposal_box_05">
                 <div class="proposal_05">
-                  <div class="proposal_text"><a href="./posts">応援する</a></div>
+                  <div class="proposal_text"><a href="./posts">シーズを探す</a></div>
                 </div>
               </div>
               
               <div class="proposal_box_06">
                 <div class="proposal_06">
                   <div class="proposal_text">
-                    <a href="./users">繋がる</a>
+                    <a href="./users">課題を探す</a>
                   </div>
                 </div>
               </div>

@@ -13,28 +13,28 @@
             </div>
             
             <div class="post_02">
-             <div class="post_title_for_detail">投稿者：{{ $post->user->name }}さん</div>
+             <div class="post_title_for_detail">研究室名：{{ $post->user->name }}さん</div>
 			 <div class="post_user_image"><img src="/uploads/{{ $post->user->img_url }}" width="60px" height="60px"></div>
             </div>
            
             <div class="post_02">
-              <div class="post_title_for_detail">レシピ名</div>
+              <div class="post_title_for_detail">研究詳細</div>
               <div class="post_02_desc">{!!nl2br(e($post->post_desc_title))!!}</div>
             </div>
             
             <div class="post_02">
-              <div class="post_title_for_detail">レシピ概要</div>
+              <div class="post_title_for_detail">企業との連携仮説</div>
               <div class="post_02_desc">{!!nl2br(e($post->post_desc))!!}</div>
             </div>
             
             <div class="post_02">
-              <div class="post_title_for_detail">週に何回やっている？</div>
+              <div class="post_title_for_detail"> 企業との連携実績数</div>
               <div class="post_02_desc">{!!nl2br(e($post->post_fre_what))!!} 回</div>
             </div>
             
             <div class="post_02">
-              <div class="post_title_for_detail">毎回何時間かかる？</div>
-              <div class="post_02_desc">{!!nl2br(e($post->post_time_what))!!} 時間</div>
+              <div class="post_title_for_detail">希望条件</div>
+              <div class="post_02_desc">{!!nl2br(e($post->post_time_what))!!} </div>
             </div>
             
             <!--<div class="post_03">
@@ -50,7 +50,7 @@
             </div>^-->
             
             <div class="post_02">
-              <div class="post_title_for_detail">チャレンジ期間</div>
+              <div class="post_title_for_detail">研究紹介動画</div>
               <div class="post_02_desc">{!!nl2br(e($post->video_url))!!}</div>
             </div>
             
@@ -62,11 +62,11 @@
             <div class="post_04">
                 <!--<div class="post_04_title"><h1>{{$post->post_title}}</h1></div>-->
                 
-                <div class="post_04_favo">応援中の仲間：{{$post->favo_user_count}} 人</div>
+                <div class="post_04_favo">応援中の企業：{{$post->favo_user_count}} 社</div>
                 
                 <div class="post_04_try">
                         
-                        <div class="try"><label class="open" for="pop-up">実践して見る</label></div>
+                        <div class="try"><label class="open" for="pop-up">メッセージを送る</label></div>
                         
                         <input type="checkbox" id="pop-up">
                         
@@ -121,7 +121,7 @@
             <div class="post_05">
                 <div class="post_05_comment">
                 <!-- コメントされた内容一覧 -->
-                <h2>専門家の応援コメント<h2>
+                <h2>企業の応援コメント<h2>
                     <ul class="comment_list">
                     @foreach ($comments as $comment)
                     @if ($comment->user->pro==1)
@@ -140,14 +140,15 @@
                     </ul>
                     <br>
                     <br>
-                    <h2>仲間のコメント<h2>
+                    <h2>公開QAコーナー<h2></br>
+                    ※企業機密に関わることの投稿はお控えください。
                     <ul class="comment_list">
                     @foreach ($comments as $comment)
                     @if ($comment->user->pro==0)
                                 <li class="comment-text">
                                     <div class="comment_list_user">
                                       <div class="image_box"><img src="/uploads/{{ $comment->user->img_url }}" width="60px" height="60px"></div>
-                                      <h2>{{ $comment->user->name }}</h2>
+                                      <!--<h2>{{ $comment->user->name }}</h2>-->
                                     </div>
                                     
                                     <div class="comment_list_comment">

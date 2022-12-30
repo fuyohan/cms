@@ -279,12 +279,12 @@ transform:scale(1.2,1.2);
 }
 
 .proposal_05{
-    background-image: url("/image/声援2.jpg");
+    background-image: url("/image/研究室.png");
     background-position: bottom;
-    background-size: 160%;
+    background-size: 110%;
     margin:auto;
-    width:420px;
-    height: 400px;
+    width:430px;
+    height: 420px;
     /*background-color: white;*/
     display: flex;
     justify-content: center;
@@ -295,13 +295,13 @@ transform:scale(1.2,1.2);
 }
 
 .proposal_06{
-    background-image: url("/image/hatsuratsu.png");
+    background-image: url("/image/課題.png");
     background-position:  top;
     opacity: 0.9;
-    background-size: 140%;
+    background-size: 100%;
     margin:auto;
-    width:420px;
-    height: 400px;
+    width:430px;
+    height: 420px;
    /*background-color: white;*/
     display: flex;
     justify-content: center;
@@ -879,15 +879,16 @@ margin-top: 30px;
 .post_all{
     display: flex;
     flex-wrap:wrap;
-    margin-left:50px;
-    margin-right:50px;
+    margin-left:250px;
+    margin-right:250px;
     margin-bottom:50px;
 }
 
 .post_block{
-    width:23%;
-    margin-right: 15px;
-    margin-bottom: 15px;
+    width:40%;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 50px;
 }
 
 .post_img img{
