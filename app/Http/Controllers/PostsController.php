@@ -7,6 +7,7 @@ use App\Models\Post; //この行を上に追加
 use App\Models\User;//この行を上に追加
 use App\Models\Comment;//この行を上に追加
 use App\Models\Category;//この行を上に追加
+use App\Models\Product; //この行を上に追加
 use Auth;//この行を上に追加
 use Validator;//この行を上に追加
 use Illuminate\Support\Str;
@@ -22,20 +23,19 @@ class PostsController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-public function top_new()
+public function top_new_kenko()
     {
-        $users = User::orderby('created_at', 'asc')->get();
-        return view('top_new',[
-            'users'=> $users
-            ]);
+        $products = Product::get();
+        return view('top_new_kenko',[
+           'products'=> $products,
+        ]);
     }
+    
     
 public function top_female()
     {
         return view('top_female');
     }
-
-
 
 public function index()
     {

@@ -59,7 +59,7 @@ class HpsController extends Controller
         $hps->testdate = $request->testdate;
         $hps->save();
         
-        return redirect('/hp');
+        return redirect('/hps');
     }
 
     /**

@@ -53,6 +53,17 @@
                                     	</button>
                                     </form>
                                 </td>
+                                
+                                @if( Auth::check() )
+                                <!-- chatボタンの表示 -->
+                                <td>
+                                    <form action="{{ url('chats/'.$user->id) }}" method="GET"> 
+                                    {{ csrf_field() }}
+                                    <button type="submit" class="btn btn-primary">壁打ちを要請</button>
+	                                </form>
+	                           </td>
+                               @endif
+                                
                             </tr>
                             @endif
                         @endforeach

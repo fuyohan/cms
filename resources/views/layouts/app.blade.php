@@ -29,7 +29,7 @@
                     {{ config('app.name', 'ハツ☆Ratsu') }}
                 </a>-->
                 <h1 class="li">
-                    <a href="/"><img src="/image/logo.png" width=150px, height=100%></a>
+                    <a href="/"><img src="/image/logo2.png" width=100%, height=100%></a>
                 </h1>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -50,7 +50,7 @@
                     </ul>-->
                     
                     <ul class=nav>
-                       <li class="li"><a href="./input"><img src="/image/研究内容の掲載.png" width=120px, height=80%></a></li>
+                       <li class="li"><a href="./input"><img src="/image/アクティビティ登録.png" width=40%, height=40%></a></li>
                        <!--<li class="li"><a href="/hp"><img src="/image/myhp.png" width=120px, height=80%></a></li>-->
                     </ul>
 

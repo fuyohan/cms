@@ -16,13 +16,15 @@ use App\Http\Controllers\ChatsController;//追記
 use App\Http\Controllers\ProductsController;//追記
 use App\Http\Controllers\ProfileController;//追記
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth'], function () { //ログインしていないと表示されないページはこの中に入れる。
     //投稿フォーム表示
     Route::get('/input', [PostsController::class, 'input']);
+    
+    Route::get('/product_input', [ProductsController::class, 'input']);
 });
 
 //TOPページ表示
-Route::get('/', [PostsController::class, 'top_new']);
+Route::get('/', [PostsController::class, 'top_new_kenko']);
 
 //TOPページ表示(女性)
 Route::get('/female', [PostsController::class, 'top_female']);
@@ -79,7 +81,7 @@ Route::get('/users_follow', [ChatsController::class, 'user_follow_index']);
 Route::post('follow/{user_id}', [ChatsController::class, 'follow_user']);
 
 //hp投稿一覧表示
-Route::get('/hp', [HpsController::class, 'index']);
+Route::get('/hps', [HpsController::class, 'index']);
 
 //hp投稿フォーム表示
 Route::get('/hpinput', [HpsController::class, 'input']);
@@ -89,6 +91,9 @@ Route::post('hppost', [HpsController::class, 'store']);
 
 //商品一覧表示
 Route::get('/products', [ProductsController::class, 'index']);
+
+//商品投稿処理
+Route::post('product_input', [ProductsController::class, 'store']);
 
 //商品詳細画面表示
 Route::get('/productsdetail/{product}',[ProductsController::class, 'detail']);

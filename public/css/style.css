@@ -252,7 +252,7 @@ transform:scale(1.2,1.2);
     margin: auto;
     background-color: #00CCCC;
     background-size: cover;
-    height: 800px;
+    height: 700px;
     position: relative;
     margin-left: 0px;
     margin-right:0px;
@@ -279,9 +279,9 @@ transform:scale(1.2,1.2);
 }
 
 .proposal_05{
-    background-image: url("/image/研究室.png");
+    background-image: url("/image/声援2.jpg");
     background-position: bottom;
-    background-size: 110%;
+    background-size: 180%;
     margin:auto;
     width:430px;
     height: 420px;
@@ -295,7 +295,7 @@ transform:scale(1.2,1.2);
 }
 
 .proposal_06{
-    background-image: url("/image/課題.png");
+    background-image: url("/image/健康ダッシュボード.png");
     background-position:  top;
     opacity: 0.9;
     background-size: 100%;
@@ -886,15 +886,38 @@ margin-top: 30px;
 
 .post_block{
     width:40%;
-    margin-left: 20px;
+    margin-left: 40px;
     margin-right: 20px;
     margin-bottom: 50px;
+}
+
+.post_all_02{
+    display: flex;
+    flex-wrap:wrap;
+    margin-left:100px;
+    margin-right:100px;
+    margin-bottom:50px;
+}
+
+.post_block_02{
+    width:30%;
+    margin-left: 30px;
+    margin-right: 0px;
+    margin-bottom: 20px;
 }
 
 .post_img img{
     border-radius: 50px 50px 0px 0px; /* 左上、右上、右下、左下 */
     width: 100%;
     height: 150px;
+    object-fit: cover;
+    background-position:10% 10%;
+}
+
+.product_img img{
+    border-radius: 50px 50px 50px 50px; /* 左上、右上、右下、左下 */
+    width: 50%;
+    height:50%;
     object-fit: cover;
 }
 
@@ -1489,6 +1512,14 @@ color:#7fbfff;
     font-size:30px;
     color: black;
     margin-top: 0px;
+    margin-bottom: 40px;
+}
+
+.post_top_02{
+    text-align: center;
+    font-size:30px;
+    color: black;
+    margin-top: 50px;
     margin-bottom: 40px;
 }
 

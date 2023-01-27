@@ -16,7 +16,7 @@
 <!--↓↓ 検索フォーム ↓↓-->
 <div class="search">
          <form id="form5" class="form-inline my-2 my-lg-0 ml-2">
-              <input id="sbox5" type="search" class="form-control mr-sm-2" name="search"  value="{{request('search')}}" placeholder="仲間の健康宣言を探して見ましょう" aria-label="検索..."> 
+              <input id="sbox5" type="search" class="form-control mr-sm-2" name="search"  value="{{request('search')}}" placeholder="何にチャレンジする？" aria-label="検索..."> 
               <input id="sbtn5" type="submit" value="検索" class="btn btn-info">
               
                 <label>
@@ -33,7 +33,7 @@
 
 <div class=fullscreen>
     <!--↑↑ 検索フォーム ↑↑-->
-    <div class="post_top"> シーズ提供研究室一覧 </div>
+    <div class="post_top"> アクティビティ一覧 </div>
     
     @if (count($posts) > 0)
                     <!-- 記事全体 -->
@@ -74,7 +74,7 @@
                                         <div class="post_like">
                                             <form action="{{ url('post/'.$post->id) }}" method="POST"> <!--post/というURL（ルーティング）にリクエストを送信している-->
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger">いいね👍</button>
+                                                <button type="submit" class="btn btn-danger">参加する👍</button>
                                             </form>
                                             {{$post->favo_user_count}}
                                         </div>

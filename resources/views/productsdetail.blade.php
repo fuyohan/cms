@@ -12,7 +12,7 @@
                 
                 <div class="product_img">
     				@if($product->img_url)
-    				<img src="/image/{{ $product->img_url }}" style="max-width:800px; max-height:600px;">
+    				<img src="/uploads/{{ $product->img_url }}" style="max-width:400px; max-height:400px;">
     				@endif
 			    </div>
              </div>
@@ -21,7 +21,7 @@
             {{ csrf_field() }}
             <!-- 投稿のタイトル -->
             <div class="form-group-product">
-                <h2>ご購入の個数を選択ください。</h2>
+                <h2>ご希望の種類を選択ください。</h2>
                 <div class="col-sm-6-product">
                     <select name="nos" class="form-control">
                         <option value="1">1回セット</option>
@@ -36,7 +36,7 @@
             <!--　購入ボタン -->
             <div class="product_detail">
                 <button type="submit" class="test_submit">
-                購入する
+                クーポンを発行する
                 </button>
             </div>
         

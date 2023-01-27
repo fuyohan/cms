@@ -6,7 +6,7 @@
     <div class="input-box">
         <div class="card-title">
             
-        <div class="input-top"> 研究領域の紹介 </div>
+        <div class="input-top"> アクティビティの登録 </div>
         <div class="input-top2">  </div>
         
         </div>
@@ -21,7 +21,7 @@
             {{ csrf_field() }}
             <!-- 投稿のタイトル -->
             <div class="form-group">
-                研究内容を一言（15字以内）で記載。
+                アクティビティを一言（15字以内）で記載。
                 <div class="col-sm-6">
                     <input type="text" name="post_title" class="form-control">
                 </div>
@@ -29,7 +29,7 @@
             
             <!-- 投稿本文のタイトル -->
             <div class="form-group">
-                研究の詳細をわかりやすく記載。
+                アクティビティの概要をわかりやすく記載。
                 <div class="col-sm-6">
                     <input type="text" name="post_desc_title" class="form-control">
                 </div>
@@ -37,7 +37,7 @@
             
             <!-- 投稿の本文 -->
             <div class="form-group">
-                企業との連携可能性を3つ以上挙げてください。
+                アクティビティの詳細をわかりやすく記載。
                 <div class="col-sm-6">
                     <textarea  class="form-control" type="text" name="post_desc" rows="5" placeholder="">
 
@@ -45,7 +45,7 @@
                 </div>
             </div>
             
-            <!-- 頻度 -->
+            <!--
             <div class="form-group">
                 企業との連携実績数を教えてください。
                 <div class="col-sm-6">
@@ -83,7 +83,7 @@
             </div>-->
             
             <div class="form-group">
-                どのカテゴリーの研究・シーズになりますか？
+                どのカテゴリーのアクティビティになりますか？
                 <div class="col-sm-6">
                     <select name="categories" multiple> <!--複数選択ができるように-->
                     @foreach($categories as $category)
@@ -94,12 +94,12 @@
             </div>
             
             <div class="form-group">
-                あなたの研究室を代表する写真があれば、ぜひアップロードください <br>
+                アクティビティを説明する写真があれば、ぜひアップロードください <br>
                 <input id="fileUploader" type="file" name="img" accept='image/' enctype="multipart/form-data" multiple="multiple" required autofocus>
             </div>
 
             <div class="form-group">
-                研究の概要がわかるYoutube動画があれば、埋め込みリンクを貼り付けてください。
+                アクティビティの概要がわかるYoutube動画があれば、埋め込みリンクを貼り付けてください。
                 <div class="col-sm-6">
                     <input type="text" name="video_url" class="form-control">
                 </div>

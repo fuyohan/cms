@@ -19,6 +19,7 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
         $products = Product::get();
@@ -31,7 +32,7 @@ class ProductsController extends Controller
     {
         $products = Product::get();
         return view('productsdetail',[
-            'product'=>$product, //bladeに対してpostテーブル（レコード1本だけ）のデータを渡す
+            'product'=>$product, //bladeに対してproductテーブル（レコード1本だけ）のデータを渡す
         ]);
     }
 
@@ -84,6 +85,59 @@ class ProductsController extends Controller
         return redirect('/buycomplete');
     }
     
+    
+    public function input()
+    {
+       return view('/product_input');
+    }
+    
+    public function store(Request $request)
+    {
+        //バリデーション 
+        $validator = Validator::make($request->all(), [
+            
+        ]);
+        
+        //バリデーション:エラー
+        if ($validator->fails()) {
+            return redirect('/')
+                ->withInput()
+                ->withErrors($validator);
+        }
+        
+        //以下に登録処理を記述（Eloquentモデル）
+        $product = new Product;
+        
+        // 画像ファイル取得
+        $file = $request->img; //$requestは引数。コントローラの関数の引数。
+    
+        if ( !empty($file) ) {
+    
+            // ファイルの拡張子取得
+            $ext = $file->guessExtension();
+    
+            //ファイル名を生成
+            $fileName = Str::random(32).'.'.$ext;
+    
+            // 画像のファイル名を任意のDBに保存
+            $product->img_url = $fileName;
+    
+            //public/uploadフォルダを作成
+            $target_path = public_path('/uploads/');
+    
+            //ファイルをpublic/uploadフォルダに移動
+            $file->move($target_path,$fileName);
+        }
+        
+        $product->product_id = $request->product_id; 
+        $product->product_name = $request->product_name ;
+        $product->product_desc = $request->product_desc;
+        $product->product_price = $request->product_price;
+        $product->product_stock = $request->product_stock;
+        $product->save();
+
+        return redirect('/');
+    }
 
 
     /**

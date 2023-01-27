@@ -7,7 +7,7 @@
     @if (count($hps) > 0)
     <div class="chart">
     
-         <div class="try_hp"><label class="open" for="pop-up">自動診断結果を見る</label></div>
+         <div class="try_hp"><label class="open" for="pop-up">メンターの<br>フォローを受ける</label></div>
                         
             <input type="checkbox" id="pop-up">
                         
@@ -109,7 +109,7 @@
 			labels: testdate,
 			datasets: [
 				{
-					label: 'hp値',
+					label: '睡眠スコア',
 					data: hp,
 					borderColor: "rgba(0,0,255,1)",
          			backgroundColor: "rgba(0,0,0,0)"
@@ -119,7 +119,7 @@
 		options: {
 			title: {
 				display: true,
-				text: 'hpログ'
+				text: '睡眠スコア'
 			}
 		}
    });
@@ -130,7 +130,7 @@
                 <table class="table table-striped task-table">
                     <!-- テーブルヘッダ -->
                     <thead>
-                        <th>あなたのテストステロン値推移</th>
+                        <th>あなたの睡眠スコア推移</th>
                         <th>&nbsp;</th>
                     </thead>
                     <!-- テーブル本体 -->
